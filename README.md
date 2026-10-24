@@ -18,9 +18,16 @@ This standalone application renders as a borderless, transparent, always-on-top 
 - **⚙️ System Tray Integration**: Right-click the chibi icon in your Windows notification area (system tray) to quickly Show/Hide, Reset Position, or Exit.
 - **🎮 Complete Interactive Experience**: Features speech bubbles, pet-pet interactions (`rua.gif`), audio effects, menu settings, API balance tracking, and role management.
 
+## 📥 Installation
+
+1. Go to the [Releases](../../releases) page of this repository.
+2. Download the latest `.zip` file from the newest release.
+3. Extract the downloaded archive to a folder of your choice on your computer.
+4. You're all set! No additional installation steps are required.
+
 ## 🚀 How to Run
 
-Getting started is simple! You can launch the overlay using any of the following methods:
+Getting started is simple! After extracting the files, you can launch the overlay using any of the following methods:
 
 - **Option 1:** Double-click `DeepSeekWhaleWidget.exe` *(Recommended)*
 - **Option 2:** Double-click `run-overlay.bat`
