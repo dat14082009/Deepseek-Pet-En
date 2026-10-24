@@ -49,5 +49,3 @@ powershell -ExecutionPolicy Bypass -File .\build.ps1
 
 - Dựa trên mã nguồn gốc của dự án `dsh-whale-widget`.
 
----
-*Tạo ra với ❤️ dành cho cộng đồng DeepSeek.*
