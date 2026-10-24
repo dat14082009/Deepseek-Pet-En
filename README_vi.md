@@ -6,7 +6,7 @@
 
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 ![Status](https://img.shields.io/badge/status-Active-success.svg)
-
+<img src="Banner.png" alt="banner" width=full>
 Đây là phiên bản ứng dụng overlay trên màn hình máy tính được làm lại từ dự án `dsh-whale-widget` bản tiếng Anh, mang cô bé **DeepSeek anime chibi (DSniang)** vô cùng đáng yêu lên ngay màn hình của bạn! 
 
 Ứng dụng độc lập này chạy dưới dạng không viền, nền trong suốt và luôn hiển thị trên cùng (always-on-top). Nó hỗ trợ tính năng click xuyên thấu (click-through) đối với các vùng nền trong suốt, đảm bảo cô bé luôn ở bên bạn mà không làm gián đoạn công việc.

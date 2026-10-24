@@ -6,7 +6,7 @@
 
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 ![Status](https://img.shields.io/badge/status-Active-success.svg)
-
+<img src="Banner.png" alt="banner" width=full>
 A true desktop overlay port of the English `dsh-whale-widget`, bringing the adorable **DeepSeek anime girl chibi (DSniang)** right to your desktop! 
 
 This standalone application renders as a borderless, transparent, always-on-top desktop companion. It fully supports click-through for transparent screen areas, ensuring she stays by your side without interrupting your workflow.
