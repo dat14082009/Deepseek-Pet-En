@@ -1,3 +1,7 @@
+<div align="right">
+  🌐 <strong>English</strong> | <a href="README_vi.md">Tiếng Việt</a>
+</div>
+
 # 🐋 DeepSeek-Pet-En (DeepSeek Chibi Overlay)
 
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
