@@ -18701,32 +18701,49 @@ function bubblePreviewInto(container, mods, widthPx, opts) {
 //  - 当前无泡泡:开新轮从第 1 次点击开始
 //  - 正显示第 2 次及以后的泡泡:回到序列开头(重开第 1 次点击泡泡)
 //  - 正显示第 1 次点击泡泡:不切换内容,仅重置留存计时
+var dshwLastWhaleClickAt = 0
+var dshwSpamClickSilencedUntil = 0
+var dshwSpamClickStreak = 0
+
 function whaleClick() {
   try {
-    if (!bubbleOn) return
-    if (bubbleScene && (bubbleScene.kind === 'cost' || bubbleScene.kind === 'alert')) return // 消耗/预警提醒期间点鲸鱼不动作(点泡泡才关)
-    if (!bubbleShown) {
-      bubbleRoundOn = true
-      bubbleSeqIdx = 0
-      bubbleShowSeqNext()
+    var now = Date.now()
+    var delta = now - dshwLastWhaleClickAt
+    dshwLastWhaleClickAt = now
+
+    // Detect rapid spam clicking (< 550ms between clicks)
+    if (delta < 550) {
+      dshwSpamClickStreak++
+    } else {
+      dshwSpamClickStreak = 1
+    }
+
+    // Always play release squeak (Ya2.mp3) on click/spam!
+    try { playReleaseDirect() } catch (err) {}
+
+    // If spam clicking (2+ rapid clicks) or currently in spam-silenced cooldown:
+    if (dshwSpamClickStreak >= 2 || now < dshwSpamClickSilencedUntil) {
+      dshwSpamClickSilencedUntil = now + 1500 // Silence speech bubble for 1.5s
+      hideBubble()
       return
     }
-    // v777：等待交互提示期间点角色 —— 开关「点按角色关闭提示气泡"打开时，点角色＝收起这条等待提示
-    //(默认关：保持"点角色不动等待提示"，只有点泡泡才关)。收起来后 pollWaitState 不会把它弹回来。
+
+    // If speech bubble is already showing, clicking the chibi dismisses it!
+    if (bubbleShown) {
+      hideBubble()
+      return
+    }
+
+    if (!bubbleOn) return
+    if (bubbleScene && (bubbleScene.kind === 'cost' || bubbleScene.kind === 'alert')) return
+
     if (bubbleScene && bubbleScene.kind === 'wait') {
       if (waitCharCloseOn()) dismissWaitBubble()
       return
     }
-    // v727：开启「点按角色推进泡泡队列"→ 点角色＝往后推进一项(不再回到第 1 项)；
-    // 已是最后一项时与「点泡泡"一致：收起泡泡，下次点按从第 1 项开始。
-    if (bubbleTapAdvance) { bubbleNext(); return }
-    if (!bubbleRoundOn) return // 非手动轮场景:不动
-    if (bubbleSeqIdx <= 1) {
-      // 正显示第 1 次点击泡泡:仅重置留存计时(续时)
-      bubbleResetTtl()
-      return
-    }
-    // 第 2 次及以后 → 回到序列开头(第 1 次点击)
+
+    // Normal click when quiet: open speech bubble
+    bubbleRoundOn = true
     bubbleSeqIdx = 0
     bubbleShowSeqNext()
   } catch (err) {}
@@ -19224,8 +19241,14 @@ function balanceRetryLater() {
   balanceRetryLeft--
   setTimeout(function () { try { refresh(false) } catch (err) {} }, delay)
 }
+var dshwLastManualRefresh = 0
 function refresh(manual) {
   if (busy) return
+  if (manual) {
+    var now = Date.now()
+    if (now - dshwLastManualRefresh < 5000) return
+    dshwLastManualRefresh = now
+  }
   busy = true
   if (animDelayTimer) { clearTimeout(animDelayTimer); animDelayTimer = null }
   if (manual || state.balance === null) { state.status = 'loading'; render() }
@@ -19800,14 +19823,21 @@ function playPress() {
 //         经常迟到、实际几乎听不到重叠；我们用音频线程精确排期，所以别照抄 100)
 // 当前取值：**40**(用户在 30/50 之间试听后选定)
 var RELEASE_LEAD_MS = 40
-function playRelease() {
-  if (releasePlayed || !releaseAudio || !soundOn) return
+function playReleaseDirect() {
+  if (!releaseAudio || !soundOn) return
   releasePlayed = true
   try {
+    var c = dshwvAudio()
+    if (c && c.state === 'suspended') {
+      try { c.resume() } catch (e) {}
+    }
     releaseAudio.currentTime = 0
     var p = releaseAudio.play()
     if (p && typeof p.catch === 'function') p.catch(function () {})
   } catch (err) {}
+}
+function playRelease() {
+  playReleaseDirect()
 }
 // 把松开音**排期到 delaySec 秒之后**(音频线程时间轴)：起播时刻精确、不受主线程抖动影响。
 function playReleaseAt(delaySec) {
@@ -19848,9 +19878,15 @@ function pressUp() {
     try { releasePlayed = true } catch (err) {}
     return
   }
+
+  // Fast tap or spamming: play Ya2.mp3 directly without delay!
+  var isFastTap = (performance.now() - pressVisualStartedAt < 250)
+  if (isFastTap || pressEnded) {
+    playReleaseDirect()
+    return
+  }
   if (pressEnded) {
-    // hold (or released after Ya1 finished) → Ya2 now
-    playRelease()
+    playReleaseDirect()
     return
   }
   // click：把松开音排到"按压音结束前 RELEASE_LEAD_MS 毫秒"(默认 0 = 正好接上)
@@ -19867,7 +19903,7 @@ function pressUp() {
     playReleaseAt(Math.max(0, remainSec - RELEASE_LEAD_MS / 1000))
     return
   }
-  // 时长未知(预热失败/解码异常)→ 交给 pressAudio.onended 兜底(见 playPress)
+  playReleaseDirect()
 }
 var menuOpen = false
 var menuClosedAt = 0 // 最近一次关闭菜单的时刻(用于避免"关掉后同一次手势又把它长按打开")

@@ -159,8 +159,8 @@ function createOverlayWindow() {
     },
   })
 
-  // Ensure top-most overlay positioning
-  mainWindow.setAlwaysOnTop(true, 'screen-saver')
+  // Ensure top-most overlay positioning without stealing system-level exclusive focus
+  mainWindow.setAlwaysOnTop(true, 'pop-up-menu')
 
   // Start with click-through enabled on transparent areas
   mainWindow.setIgnoreMouseEvents(true, { forward: true })
