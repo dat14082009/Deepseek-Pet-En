@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: http://127.0.0.1:*;">
+<title>DeepSeek Chibi Overlay</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent !important;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  #root {
+    width: 100%;
+    height: 100%;
+    background: transparent !important;
+    pointer-events: none;
+  }
+  /* Hidden composer textarea to satisfy widget initialization */
+  textarea.host-composer {
+    position: fixed;
+    left: -10000px;
+    top: -10000px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div id="root"><textarea class="host-composer" aria-label="Standalone host composer"></textarea></div>
+
+<script>
+(function () {
+  if (!window.electronOverlay) return;
+
+  var isMouseDown = false;
+  var isHoveringWidget = false;
+
+  function onPointerActive() {
+    isMouseDown = true;
+    if (!isHoveringWidget) {
+      isHoveringWidget = true;
+      window.electronOverlay.setIgnoreMouseEvents(false);
+    }
+  }
+
+  function onPointerInactive(e) {
+    isMouseDown = false;
+    if (e && typeof e.clientX === 'number') {
+      checkPoint(e.clientX, e.clientY);
+    }
+  }
+
+  window.addEventListener('mousedown', onPointerActive, true);
+  window.addEventListener('pointerdown', onPointerActive, true);
+  window.addEventListener('mouseup', onPointerInactive, true);
+  window.addEventListener('pointerup', onPointerInactive, true);
+  window.addEventListener('pointercancel', onPointerInactive, true);
+
+  function isInteractiveElement(el) {
+    if (!el || el === document.body || el === document.documentElement || el.id === 'root') {
+      return false;
+    }
+    if (el.nodeType === 3) {
+      el = el.parentElement;
+      if (!el) return false;
+    }
+    if (el.tagName === 'TEXTAREA' && el.classList.contains('host-composer')) {
+      return false;
+    }
+    if (el.closest('.dshwv-root') ||
+        el.closest('.dshwv-menu') ||
+        el.closest('.dshwv-pop') ||
+        el.closest('.dshwv-about') ||
+        el.closest('[class*="dshwv-"]') ||
+        el.closest('button') ||
+        el.closest('input') ||
+        el.closest('select') ||
+        el.closest('dialog') ||
+        el.closest('a')) {
+      return true;
+    }
+    return false;
+  }
+
+  function isAnyModalOrMenuOpen() {
+    var menu = document.querySelector('.dshwv-menu.dshwv-menu-open');
+    if (menu && menu.style.display !== 'none') return true;
+
+    var about = document.querySelector('.dshwv-about');
+    if (about && about.style.display !== 'none' && about.offsetParent !== null) return true;
+
+    var audioMask = document.querySelector('.dshwv-audiomask');
+    if (audioMask && audioMask.style.display !== 'none') return true;
+
+    var editMask = document.querySelector('.dshwv-frame-edit-mask');
+    if (editMask && editMask.style.display !== 'none') return true;
+
+    return false;
+  }
+
+  function checkPoint(x, y) {
+    if (isMouseDown) return; // Never drop mouse capture while dragging/clicking
+
+    // 1. If any modal/menu is open, keep mouse capture so clicking outside can dismiss it
+    if (isAnyModalOrMenuOpen()) {
+      if (!isHoveringWidget) {
+        isHoveringWidget = true;
+        window.electronOverlay.setIgnoreMouseEvents(false);
+      }
+      return;
+    }
+
+    // 2. Direct hit on an interactive DOM element
+    var el = document.elementFromPoint(x, y);
+    var shouldCapture = isInteractiveElement(el);
+
+    // 3. Geometric bounds fallback (character image, menu button, bubble)
+    if (!shouldCapture) {
+      var rootEl = document.querySelector('.dshwv-root');
+      if (rootEl) {
+        var imgEl = rootEl.querySelector('.dshwv-img');
+        if (imgEl) {
+          var r = imgEl.getBoundingClientRect();
+          if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
+            shouldCapture = true;
+          }
+        }
+        var btnEl = rootEl.querySelector('.dshwv-menu-btn');
+        if (btnEl && !btnEl.classList.contains('dshwv-menu-btn-hidden')) {
+          var br = btnEl.getBoundingClientRect();
+          if (x >= br.left && x <= br.right && y >= br.top && y <= br.bottom) {
+            shouldCapture = true;
+          }
+        }
+      }
+
+      var popEl = document.querySelector('.dshwv-pop.dshwv-pop-open');
+      if (popEl) {
+        var pr = popEl.getBoundingClientRect();
+        if (x >= pr.left && x <= pr.right && y >= pr.top && y <= pr.bottom) {
+          shouldCapture = true;
+        }
+      }
+    }
+
+    if (shouldCapture !== isHoveringWidget) {
+      isHoveringWidget = shouldCapture;
+      window.electronOverlay.setIgnoreMouseEvents(!shouldCapture);
+    }
+  }
+
+  window.addEventListener('mousemove', function (e) {
+    checkPoint(e.clientX, e.clientY);
+  }, true);
+
+  window.addEventListener('pointermove', function (e) {
+    checkPoint(e.clientX, e.clientY);
+  }, true);
+
+  window.addEventListener('mouseleave', function () {
+    if (!isMouseDown && !isAnyModalOrMenuOpen() && isHoveringWidget) {
+      isHoveringWidget = false;
+      window.electronOverlay.setIgnoreMouseEvents(true);
+    }
+  }, true);
+
+  // Initial state: ignore transparent backdrop
+  window.electronOverlay.setIgnoreMouseEvents(true);
+})();
+</script>
+
+<script src="/dsh-whale/widget.js"></script>
+</body>
+</html>

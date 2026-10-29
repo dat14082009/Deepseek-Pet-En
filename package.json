@@ -1,0 +1,44 @@
+﻿{
+    "name":  "dsh-whale-widget-en",
+    "version":  "0.4.2",
+    "description":  "English-language DeepSeek Balance Whale widget for DeepSeek Harness, with balance tracking, usage accounting, customizable bubbles, alerts, audio, and provider quotas.",
+    "keywords":  [
+                     "dsh",
+                     "dsh-plugin",
+                     "deepseek-harness",
+                     "balance",
+                     "widget"
+                 ],
+    "type":  "module",
+    "main":  "lib/index.js",
+    "icon":  "./icon.png",
+    "files":  [
+                  "lib",
+                  "assets",
+                  "icon.png",
+                  "cordis.patch.yml",
+                  "README.md",
+                  "PROVENANCE.md"
+              ],
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget.git"
+                   },
+    "bugs":  {
+                 "url":  "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget/issues"
+             },
+    "homepage":  "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget#readme",
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           }
+            },
+    "license":  "MIT",
+    "devDependencies":  {
+                            "electron":  "^45.0.0"
+                        },
+    "scripts":  {
+                    "start":  "electron electron-main.cjs",
+                    "overlay":  "electron electron-main.cjs"
+                }
+}
