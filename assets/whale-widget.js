@@ -1,3 +1,200 @@
+var I18N = {
+  en: {
+    langBtn: '🇺🇸 English',
+    langTitle: 'Current: English. Click to switch to Vietnamese.',
+    langLabel: 'Language',
+    size: 'Size',
+    sound: 'Sound effects and prompts',
+    soundBtn: 'Settings',
+    bubbleSwitch: 'Bubble global switch',
+    bubbleBtn: 'Speech Bubble Settings',
+    avoidScroll: 'Avoid scroll bar',
+    width: 'Width',
+    character: 'Character',
+    roleSelect: 'Select',
+    roleImport: 'Import',
+    edgeSnap: 'Edge snapping and mirroring',
+    customBtn: 'Custom',
+    hideMenuBtn: 'Hide menu button',
+    fullScreen: 'Full Screen Mode',
+    resManage: 'Resource Management',
+    resBtn: 'Management',
+    geminiTitle: 'Google Gemini API Key (AI Chat)',
+    geminiDesc: 'Powers live AI text chat with DeepSeek',
+    geminiInp: 'Paste Gemini Key (AIza...)',
+    saveBtn: 'Save',
+    savingBtn: 'Saving...',
+    connected: '✓ Connected',
+    noKey: 'No Key',
+    offline: 'Offline',
+    chatPlaceholder: 'Type here...',
+    thinking: 'Thinking... 💭',
+    noKeyChat: 'Please enter Gemini Key in Menu',
+    tokenLabel: 'DeepSeek Balance',
+    switchMsg: 'Switched to English, Boss! 🐋✨',
+
+    // Usage Records
+    usageNavBtn: '- = Usage Records = -',
+    usageNavBtnReturn: '‹ Return',
+    usageNavTitle: 'View today/last 7 days/all consumption records',
+    usageNavTitleReturn: 'Return to main menu',
+    usageSubTitle: '- = Usage Records = -',
+    usageKeyTitle: 'DeepSeek API Key (Token Check)',
+    usageKeyHint: 'Enter API key to show real balance & tokens in the speech bubble',
+    usageKeyPlaceholder: 'Paste API Key (sk-...)',
+    usageKeyChecking: 'Checking key status...',
+    usageKeyConfigured: 'Configured ✓ Balance: ',
+    usageKeyNoKey: 'No API key set yet',
+    usageKeySave: 'Save',
+    usageKeySaving: 'Saving...',
+    usageKeySaved: 'Saved! Refreshing balance... ✓',
+    usageKeyEnterPrompt: '⚠ Please enter an API key',
+    usageKeyFailed: '⚠ Save failed: ',
+    usageModelSecTitle: 'Model (reminder/budget/limit)',
+    usageRefreshBtn: 'Refresh',
+    usageRefreshingBtn: 'Refreshing...',
+    usageRefreshTitle: 'Manually refresh the balance/limit/used today of each model',
+    usageLocalCostTitle: 'Local model cost',
+    usageLocalCostDesc: 'is calculated based on the local DSH session and is not scaled according to the account balance; the coverage of the two is different.',
+    usagePast7Days: 'Usage records in the past 7 days',
+    usageMoreBtn: 'More consumption records…',
+    usageMoreBtnTitle: 'Open the window to view all recorded consumption',
+    usageNoRecordToday: 'No consumption record today',
+    usageLoading: 'Loading…',
+    usageTryAgain: 'Try again',
+    usageAddModel: '+ Add model (custom API)',
+    usageSettings: 'Settings',
+    usageEditor: 'Editor',
+    usageEditorTitle: 'Open the configuration card (enable / value / reminder copy)',
+    usageAllTitle: 'Consumption records (all)',
+    usageAllTotal: 'Total of all records',
+    usageLoadingFailed: 'Record loading failed',
+    usageTodayLabel: 'Today'
+  },
+  vi: {
+    langBtn: '🇻🇳 Tiếng Việt',
+    langTitle: 'Hiện tại: Tiếng Việt. Bấm để đổi sang Tiếng Anh.',
+    langLabel: 'Ngôn ngữ',
+    size: 'Kích thước',
+    sound: 'Âm thanh & Lời nhắc',
+    soundBtn: 'Cài đặt âm thanh / bong bóng',
+    bubbleSwitch: 'Bật / Tắt bong bóng',
+    bubbleBtn: 'Cài đặt bong bóng thoại',
+    avoidScroll: 'Tránh thanh cuộn',
+    width: 'Chiều rộng',
+    character: 'Nhân vật',
+    roleSelect: 'Chọn',
+    roleImport: 'Nhập ảnh',
+    edgeSnap: 'Hút viền & Lật gương',
+    customBtn: 'Tùy chỉnh',
+    hideMenuBtn: 'Ẩn nút cài đặt',
+    fullScreen: 'Chế độ toàn màn hình',
+    resManage: 'Quản lý tài nguyên',
+    resBtn: 'Quản lý',
+    geminiTitle: 'Google Gemini API Key (Chat AI)',
+    geminiDesc: 'Dùng để trò chuyện trực tiếp với DeepSeek',
+    geminiInp: 'Dán mã khóa Gemini (AIza...)',
+    saveBtn: 'Lưu',
+    savingBtn: 'Đang lưu...',
+    connected: '✓ Đã kết nối',
+    noKey: 'Chưa có mã khóa',
+    offline: 'Ngoại tuyến',
+    chatPlaceholder: 'Nhập tin nhắn...',
+    thinking: 'Đang suy nghĩ... 💭',
+    noKeyChat: 'Vui lòng nhập khóa Gemini trong Cài đặt',
+    tokenLabel: 'Số dư DeepSeek',
+    switchMsg: 'Đã đổi sang Tiếng Việt rồi nè Chủ nhân! 🐋✨',
+
+    // Usage Records
+    usageNavBtn: '- = Lịch sử sử dụng = -',
+    usageNavBtnReturn: '‹ Quay lại',
+    usageNavTitle: 'Xem lịch sử dùng hôm nay / 7 ngày qua / tất cả',
+    usageNavTitleReturn: 'Quay lại menu chính',
+    usageSubTitle: '- = Lịch sử sử dụng = -',
+    usageKeyTitle: 'Khóa API DeepSeek (Kiểm tra Token)',
+    usageKeyHint: 'Nhập mã API để hiển thị số dư & token thật trong bong bóng',
+    usageKeyPlaceholder: 'Dán mã API (sk-...)',
+    usageKeyChecking: 'Đang kiểm tra trạng thái khóa...',
+    usageKeyConfigured: 'Đã cấu hình ✓ Số dư: ',
+    usageKeyNoKey: 'Chưa thiết lập mã API',
+    usageKeySave: 'Lưu',
+    usageKeySaving: 'Đang lưu...',
+    usageKeySaved: 'Đã lưu! Đang cập nhật số dư... ✓',
+    usageKeyEnterPrompt: '⚠ Vui lòng nhập mã API',
+    usageKeyFailed: '⚠ Lưu thất bại: ',
+    usageModelSecTitle: 'Mô hình (nhắc nhở / ngân sách / hạn mức)',
+    usageRefreshBtn: 'Làm mới',
+    usageRefreshingBtn: 'Đang làm mới...',
+    usageRefreshTitle: 'Làm mới thủ công số dư / hạn mức / đã dùng hôm nay của từng mô hình',
+    usageLocalCostTitle: 'Chi phí mô hình cục bộ',
+    usageLocalCostDesc: 'được tính theo phiên làm việc cục bộ và không khớp tuyệt đối với số dư tài khoản.',
+    usagePast7Days: 'Lịch sử dùng 7 ngày qua',
+    usageMoreBtn: 'Xem thêm lịch sử…',
+    usageMoreBtnTitle: 'Mở cửa sổ xem toàn bộ lịch sử chi phí đã ghi nhận',
+    usageNoRecordToday: 'Hôm nay chưa có chi phí',
+    usageLoading: 'Đang tải…',
+    usageTryAgain: 'Thử lại',
+    usageAddModel: '+ Thêm mô hình (API tùy chỉnh)',
+    usageSettings: 'Cài đặt',
+    usageEditor: 'Chỉnh sửa',
+    usageEditorTitle: 'Mở thẻ cấu hình (bật / giá trị / lời nhắc)',
+    usageAllTitle: 'Tất cả lịch sử sử dụng',
+    usageAllTotal: 'Tổng cộng tất cả bản ghi',
+    usageLoadingFailed: 'Không thể tải dữ liệu',
+    usageTodayLabel: 'Hôm nay'
+  }
+}
+
+var I18N_MAP = {
+  'Size': 'size',
+  'Sound effects and prompts': 'sound',
+  'Bubble global switch': 'bubbleSwitch',
+  'avoid scroll bar': 'avoidScroll',
+  'Width': 'width',
+  'character': 'character',
+  'Hide menu button': 'hideMenuBtn',
+  'Full Screen Mode': 'fullScreen',
+  'Language': 'langLabel',
+  'Resource Management': 'resManage',
+  'Edge snapping and mirroring': 'edgeSnap'
+}
+
+function applyLanguageUI() {
+  try {
+    var dict = I18N[dshwCurrentLang] || I18N.vi
+    var els = document.querySelectorAll('[data-i18n]')
+    els.forEach(function (el) {
+      var k = el.getAttribute('data-i18n')
+      if (dict && dict[k]) el.textContent = dict[k]
+    })
+    if (typeof updateLangBtnUI === 'function') updateLangBtnUI()
+    if (typeof window.updateLangBtnUI === 'function') window.updateLangBtnUI()
+    if (typeof setUsageNavBtn === 'function') setUsageNavBtn(typeof usagePanelOpen !== 'undefined' ? usagePanelOpen : false)
+    if (typeof window.setUsageNavBtn === 'function') window.setUsageNavBtn(typeof usagePanelOpen !== 'undefined' ? usagePanelOpen : false)
+    if (typeof rebuildUsageSubShell === 'function' && typeof usagePanelOpen !== 'undefined' && usagePanelOpen) rebuildUsageSubShell()
+    if (typeof window.rebuildUsageSubShell === 'function' && typeof usagePanelOpen !== 'undefined' && usagePanelOpen) window.rebuildUsageSubShell()
+    if (typeof gMenuInp !== 'undefined' && gMenuInp) gMenuInp.placeholder = dict.geminiInp
+    if (typeof gMenuSaveBtn !== 'undefined' && gMenuSaveBtn) gMenuSaveBtn.textContent = dict.saveBtn
+    if (typeof gCardTitle !== 'undefined' && gCardTitle) gCardTitle.textContent = dict.geminiTitle
+    if (typeof roleBtnLabel !== 'undefined' && roleBtnLabel && (!currentRole || currentRole.id === 'default')) roleBtnLabel.textContent = 'DeepSeek'
+    if (typeof labelEl !== 'undefined' && labelEl) labelEl.textContent = dict.tokenLabel
+    try { updateMenuGeminiStatus() } catch (e) {}
+  } catch (err) {}
+}
+
+var dshwCurrentLang = 'vi'
+try {
+  dshwCurrentLang = localStorage.getItem('dshw-lang') || 'vi'
+} catch (e) {
+  dshwCurrentLang = 'vi'
+}
+function showQuickBubble(msg) {
+  try {
+    var lines = singleCenter('A', msg, '', true)
+    applyDefaultFrame()
+    sceneOpen('random', function () { bubbleRenderRandom(lines) }, 3000)
+  } catch (err) {}
+}
 (function () {
 if (window.__dshWhaleWidget) return
 window.__dshWhaleWidget = true
@@ -585,6 +782,13 @@ var css = [
   '.dshwv-root.dshwv-cursor-grabbing .dshwv-img{pointer-events:auto;cursor:grabbing}',
   // 拖动期间握点相对挂件固定，让整个盒接过指针以保持 grabbing(类由按下时加、endDrag 摘)
   '.dshwv-root.dshwv-dragging .dshwv-body{pointer-events:auto;cursor:grabbing}',
+  '.dshwv-chat-reply-scroll::-webkit-scrollbar{width:4px}',
+  '.dshwv-chat-reply-scroll::-webkit-scrollbar-track{background:transparent}',
+  '.dshwv-chat-reply-scroll::-webkit-scrollbar-thumb{background:rgba(32,49,112,0.35);border-radius:4px}',
+  '.dshwv-text.dshwv-text-chat{width:68% !important;height:62% !important;pointer-events:auto !important;user-select:text !important;-webkit-user-select:text !important;white-space:normal !important;overflow:hidden !important;padding:0 !important;box-sizing:border-box !important}',
+  '.dshwv-pop.dshwv-pop-chat{pointer-events:auto !important}',
+  '.dshwv-bubble-chat{width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:auto !important;box-sizing:border-box;overflow:hidden}',
+  '.dshwv-bubble-chat *{box-sizing:border-box}',
   '.dshwv-pop{position:absolute;left:0;top:0;width:100%;aspect-ratio:1026/700;pointer-events:none;z-index:1;--dshw-u:calc(var(--dshw-base) / 1026)}',
   // v822：形状专属容器(只在它里面重画 ⇒ 内容与动图不受影响)；铺满泡泡并排在最底层
   '.dshwv-shapewrap{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}',
@@ -770,7 +974,7 @@ var css = [
   '.dshwv-audiodel{width:22px;height:22px;border:none;background:none;cursor:pointer;font-size:13px;color:#c0392b;padding:0;flex:0 0 auto}',
   '.dshwv-audiomask{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:20500;display:flex;align-items:center;justify-content:center;color-scheme:light}',
   '.dshwv-audiowin{background:#fff;border-radius:12px;padding:16px 18px;width:360px;box-shadow:0 10px 30px rgba(0,0,0,.3);text-align:center}',
-  '.dshwv-audiotitle{font-size:14px;font-weight:600;color:#203170;margin-bottom:12px}',
+  '.dshwv-audiotitle{font-size:14px;font-weight:700;color:#203170;margin-bottom:12px}',
   '.dshwv-audionameinput{width:50%;box-sizing:border-box;border:1px solid rgba(32,49,112,.4);border-radius:6px;padding:6px 8px;font-size:13px;color:#203170;text-align:center;margin:0 auto 14px;display:block}',
   '.dshwv-audiorow{display:flex;align-items:center;gap:8px;margin:0 0 10px;color:#203170;font-size:12px;white-space:nowrap}',
   '.dshwv-audioslotlabel{flex:0 0 auto;width:32px;text-align:left}',
@@ -1383,9 +1587,12 @@ function setVersionLabel(text) {
 }
 var lastVersionLabel = ''
 menuVerEl.style.display = 'none'
-function menuLabel(text) {
+function menuLabel(text, i18nKey) {
   var s = document.createElement('span')
-  s.textContent = text
+  var k = i18nKey || I18N_MAP[text] || text
+  s.setAttribute('data-i18n', k)
+  var dict = I18N[dshwCurrentLang] || I18N.vi
+  s.textContent = (dict && dict[k]) || text
   return s
 }
 function menuRow() {
@@ -1604,8 +1811,10 @@ function dshwCustSel(sel, opts) {
 var usageRecBtn = document.createElement('button')
 usageRecBtn.type = 'button'
 usageRecBtn.className = 'dshwv-roleimport'
-usageRecBtn.textContent = '- = Usage Records = -'
-usageRecBtn.title = 'View today/last 7 days/all consumption records'
+usageRecBtn.setAttribute('data-i18n', 'usageNavBtn')
+var _dshwInitDict = I18N[dshwCurrentLang] || I18N.vi
+usageRecBtn.textContent = _dshwInitDict.usageNavBtn
+usageRecBtn.title = _dshwInitDict.usageNavTitle
 usageRecBtn.addEventListener('click', function (e) {
   e.stopPropagation()
   // v793：「关于/自检"打开时，这个底部按钮也是「‹ 返回"
@@ -2084,7 +2293,8 @@ var soundPanelBtn = document.createElement('button')
 soundPanelBtn.type = 'button'
 soundPanelBtn.className = 'dshwv-roleimport'
 soundPanelBtn.style.flex = '1'
-soundPanelBtn.textContent = 'Sound effect/prompt bubble settings'
+soundPanelBtn.textContent = (I18N[dshwCurrentLang] || I18N.vi).soundBtn
+soundPanelBtn.setAttribute('data-i18n', 'soundBtn')
 soundPanelBtn.title = 'Prompt and sound effect settings: press volume/sound effect group, consumption prompt for each round, question prompt, authorization prompt'
 soundPanelBtn.addEventListener('click', function (e) { e.stopPropagation(); openSoundSettingsPanel() })
 row2.appendChild(soundPanelBtn)
@@ -2096,7 +2306,8 @@ var bubbleCustomBtn = document.createElement('button')
 bubbleCustomBtn.type = 'button'
 bubbleCustomBtn.className = 'dshwv-roleimport'
 bubbleCustomBtn.style.flex = '1'
-bubbleCustomBtn.textContent = 'Speech Bubble Settings'
+bubbleCustomBtn.textContent = (I18N[dshwCurrentLang] || I18N.vi).bubbleBtn
+bubbleCustomBtn.setAttribute('data-i18n', 'bubbleBtn')
 bubbleCustomBtn.title = 'Open “Speech Bubble Settings” (content and rotation options)'
 bubbleCustomBtn.addEventListener('click', function (e) { e.stopPropagation(); openBubbleEditor() })
 row6.appendChild(bubbleCustomBtn)
@@ -2127,14 +2338,15 @@ roleBtn.className = 'dshwv-rolebtn'
 roleBtn.title = 'Select character'
 var roleBtnLabel = document.createElement('span')
 roleBtnLabel.className = 'dshwv-btnlabel'
-roleBtnLabel.textContent = 'Whale Widget'
+roleBtnLabel.textContent = 'DeepSeek'
 roleBtn.appendChild(roleBtnLabel)
 var rolePanel = document.createElement('div')
 rolePanel.className = 'dshwv-rolelist'
 var roleImportBtn = document.createElement('button')
 roleImportBtn.type = 'button'
 roleImportBtn.className = 'dshwv-roleimport'
-roleImportBtn.textContent = 'import'
+roleImportBtn.textContent = (I18N[dshwCurrentLang] || I18N.vi).roleImport
+roleImportBtn.setAttribute('data-i18n', 'roleImport')
 roleImportBtn.title = 'Import custom character pictures'
 var rowRole = menuRow()
 rowRole.appendChild(menuLabel('character'))
@@ -2148,6 +2360,253 @@ roleBtn.addEventListener('click', function (e) { e.stopPropagation(); toggleRole
 roleImportBtn.addEventListener('click', function (e) { e.stopPropagation(); roleFileInput.click() })
 roleFileInput.addEventListener('change', function () { onRoleFileChosen(roleFileInput) })
 menuBox.appendChild(rowRole)
+
+// —— DeepSeek API Key Menu Card (Direct in Main Menu) ——
+var apiMenuCard = document.createElement('div')
+apiMenuCard.className = 'dshwv-menu-card'
+apiMenuCard.style.cssText = 'margin:6px 0;padding:8px 10px;border-radius:8px;background:rgba(32,49,112,.06);border:1px solid rgba(32,49,112,.18);text-align:left;'
+
+var apiCardHeader = document.createElement('div')
+apiCardHeader.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;'
+
+var apiCardTitle = document.createElement('span')
+apiCardTitle.style.cssText = 'font-weight:bold;color:#203170;font-size:12px;'
+apiCardTitle.textContent = 'DeepSeek API Key'
+
+var apiCardBadge = document.createElement('span')
+apiCardBadge.style.cssText = 'font-size:10px;font-weight:bold;color:#6b7280;'
+apiCardBadge.textContent = 'Checking...'
+
+apiCardHeader.appendChild(apiCardTitle)
+apiCardHeader.appendChild(apiCardBadge)
+apiMenuCard.appendChild(apiCardHeader)
+
+var apiCardRow = document.createElement('div')
+apiCardRow.style.cssText = 'display:flex;gap:6px;align-items:center;'
+
+var apiMenuInp = document.createElement('input')
+apiMenuInp.type = 'password'
+apiMenuInp.placeholder = 'Paste API Key (sk-...)'
+apiMenuInp.title = 'Paste DeepSeek API Key to check tokens & balance'
+apiMenuInp.style.cssText = 'flex:1;min-width:0;height:26px;box-sizing:border-box;padding:0 6px;border:1px solid #c7d2fe;border-radius:5px;font-size:11px;background:#ffffff;color:#203170;outline:none;'
+apiMenuInp.addEventListener('click', function (e) { e.stopPropagation() })
+apiMenuInp.addEventListener('mousedown', function (e) { e.stopPropagation() })
+apiMenuInp.addEventListener('keydown', function (e) {
+  e.stopPropagation()
+  if (e.key === 'Enter') apiMenuSaveBtn.click()
+})
+
+var apiMenuSaveBtn = document.createElement('button')
+apiMenuSaveBtn.type = 'button'
+apiMenuSaveBtn.className = 'dshwv-roleimport'
+apiMenuSaveBtn.textContent = 'Save'
+apiMenuSaveBtn.style.cssText = 'height:26px;padding:0 10px;margin:0;font-size:11px;font-weight:bold;cursor:pointer;flex:0 0 auto;'
+
+apiCardRow.appendChild(apiMenuInp)
+apiCardRow.appendChild(apiMenuSaveBtn)
+apiMenuCard.appendChild(apiCardRow)
+
+var apiMenuStatus = document.createElement('div')
+apiMenuStatus.style.cssText = 'font-size:10px;margin-top:4px;color:#6b7280;line-height:1.3;white-space:normal;word-break:break-all;'
+apiMenuStatus.textContent = 'Enter API key to show real balance & tokens'
+apiMenuCard.appendChild(apiMenuStatus)
+
+function updateMenuApiStatus() {
+  fetch('/dsh-whale/balance.json', { cache: 'no-store' })
+    .then(function (r) { return r.json() })
+    .then(function (b) {
+      if (b && b.ok) {
+        var balStr = fmt(b.totalBalance, b.currency || 'CNY')
+        apiCardBadge.textContent = '✓ Configured'
+        apiCardBadge.style.color = '#2fa24c'
+        apiMenuStatus.textContent = 'Balance: ' + balStr + ' · Ready for token check'
+        apiMenuStatus.style.color = '#2fa24c'
+      } else if (b && b.code === 'NO_KEY') {
+        apiCardBadge.textContent = 'No Key'
+        apiCardBadge.style.color = '#6b7280'
+        apiMenuStatus.textContent = 'No API key set. Paste sk-... above and click Save'
+        apiMenuStatus.style.color = '#6b7280'
+      } else {
+        apiCardBadge.textContent = '⚠ Error'
+        apiCardBadge.style.color = '#e0433f'
+        apiMenuStatus.textContent = (b && b.error) ? ('⚠ ' + b.error) : 'Failed to read balance'
+        apiMenuStatus.style.color = '#e0433f'
+      }
+    })
+    .catch(function () {
+      apiCardBadge.textContent = 'Offline'
+      apiCardBadge.style.color = '#6b7280'
+    })
+}
+
+apiMenuSaveBtn.addEventListener('click', function (e) {
+  e.stopPropagation()
+  var val = (apiMenuInp.value || '').trim()
+  if (!val) {
+    apiMenuStatus.textContent = '⚠ Please paste an API key first'
+    apiMenuStatus.style.color = '#e0433f'
+    return
+  }
+  apiMenuSaveBtn.disabled = true
+  apiMenuSaveBtn.textContent = 'Saving...'
+  fetch('/dsh-whale/api-models.json', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'set-key', keyRef: 'DEEPSEEK_API_KEY', keyValue: val })
+  })
+  .then(function (r) { return r.json() })
+  .then(function (d) {
+    apiMenuSaveBtn.disabled = false
+    apiMenuSaveBtn.textContent = 'Save'
+    if (d && d.ok) {
+      apiMenuInp.value = ''
+      apiMenuStatus.textContent = 'Saved! Refreshing balance... ✓'
+      apiMenuStatus.style.color = '#2fa24c'
+      fetch('/dsh-whale/balance.json?force=1', { cache: 'no-store' })
+        .then(function (r) { return r.json() })
+        .then(function (b) {
+          if (b && b.ok) {
+            state.balance = Number(b.totalBalance)
+            state.status = 'normal'
+            render()
+          }
+          updateMenuApiStatus()
+        })
+        .catch(function () { updateMenuApiStatus() })
+    } else {
+      apiMenuStatus.textContent = '⚠ Save failed: ' + ((d && d.error) || 'unknown error')
+      apiMenuStatus.style.color = '#e0433f'
+    }
+  })
+  .catch(function (err) {
+    apiMenuSaveBtn.disabled = false
+    apiMenuSaveBtn.textContent = 'Save'
+    apiMenuStatus.textContent = '⚠ Network error while saving'
+    apiMenuStatus.style.color = '#e0433f'
+  })
+})
+
+try { updateMenuApiStatus() } catch (err) {}
+// menuBox.appendChild(apiMenuCard) [Removed DeepSeek API message]
+
+// —— Google Gemini API Key Menu Card (AI Chat) ——
+var geminiMenuCard = document.createElement('div')
+geminiMenuCard.className = 'dshwv-menu-card'
+geminiMenuCard.style.cssText = 'margin:6px 0;padding:8px 10px;border-radius:8px;background:rgba(32,49,112,.06);border:1px solid rgba(32,49,112,.18);text-align:left;'
+
+var gCardHeader = document.createElement('div')
+gCardHeader.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;'
+
+var gCardTitle = document.createElement('span')
+gCardTitle.style.cssText = 'font-weight:bold;color:#203170;font-size:12px;'
+gCardTitle.textContent = 'Google Gemini API Key (AI Chat)'
+
+var gCardBadge = document.createElement('span')
+gCardBadge.style.cssText = 'font-size:10px;font-weight:bold;color:#6b7280;'
+gCardBadge.textContent = 'Checking...'
+
+gCardHeader.appendChild(gCardTitle)
+gCardHeader.appendChild(gCardBadge)
+geminiMenuCard.appendChild(gCardHeader)
+
+var gCardRow = document.createElement('div')
+gCardRow.style.cssText = 'display:flex;gap:6px;align-items:center;'
+
+var gMenuInp = document.createElement('input')
+gMenuInp.type = 'password'
+gMenuInp.placeholder = 'Paste Gemini Key (AIza...)'
+gMenuInp.title = 'Paste Google Gemini API Key for Click 3 AI chat'
+gMenuInp.style.cssText = 'flex:1;min-width:0;height:26px;box-sizing:border-box;padding:0 6px;border:1px solid #c7d2fe;border-radius:5px;font-size:11px;background:#ffffff;color:#203170;outline:none;'
+gMenuInp.addEventListener('click', function (e) { e.stopPropagation() })
+gMenuInp.addEventListener('mousedown', function (e) { e.stopPropagation() })
+gMenuInp.addEventListener('keydown', function (e) {
+  e.stopPropagation()
+  if (e.key === 'Enter') gMenuSaveBtn.click()
+})
+
+var gMenuSaveBtn = document.createElement('button')
+gMenuSaveBtn.type = 'button'
+gMenuSaveBtn.className = 'dshwv-roleimport'
+gMenuSaveBtn.textContent = 'Save'
+gMenuSaveBtn.style.cssText = 'height:26px;padding:0 10px;margin:0;font-size:11px;font-weight:bold;cursor:pointer;flex:0 0 auto;'
+
+gCardRow.appendChild(gMenuInp)
+gCardRow.appendChild(gMenuSaveBtn)
+geminiMenuCard.appendChild(gCardRow)
+
+var gMenuStatus = document.createElement('div')
+gMenuStatus.style.cssText = 'font-size:10px;margin-top:4px;color:#6b7280;line-height:1.3;white-space:normal;word-break:break-all;'
+gMenuStatus.textContent = 'Powers live AI text chat with DeepSeek'
+geminiMenuCard.appendChild(gMenuStatus)
+
+function updateMenuGeminiStatus() {
+  fetch('/dsh-whale/gemini-status', { cache: 'no-store' })
+    .then(function (r) { return r.json() })
+    .then(function (d) {
+      var dict = I18N[dshwCurrentLang] || I18N.vi
+      if (d && d.hasKey) {
+        gCardBadge.textContent = dict.connected || '✓ Connected'
+        gCardBadge.style.color = '#2fa24c'
+        gMenuStatus.textContent = (dshwCurrentLang === 'vi')
+          ? ('Đã kết nối (' + d.preview + ') · Bấm vào bong bóng để trò chuyện!')
+          : ('Connected (' + d.preview + ') · Click bubble to chat!')
+        gMenuStatus.style.color = '#2fa24c'
+      } else {
+        gCardBadge.textContent = dict.noKey || 'No Key'
+        gCardBadge.style.color = '#6b7280'
+        gMenuStatus.textContent = (dshwCurrentLang === 'vi')
+          ? 'Dán mã khóa AIza... từ Google AI Studio vào ô trên để chat'
+          : 'Paste AIza... key from Google AI Studio above to chat'
+        gMenuStatus.style.color = '#6b7280'
+      }
+    })
+    .catch(function () {
+      var dict = I18N[dshwCurrentLang] || I18N.vi
+      gCardBadge.textContent = dict.offline || 'Offline'
+      gCardBadge.style.color = '#6b7280'
+    })
+}
+
+gMenuSaveBtn.addEventListener('click', function (e) {
+  e.stopPropagation()
+  var val = (gMenuInp.value || '').trim()
+  if (!val) {
+    gMenuStatus.textContent = '⚠ Please paste your Gemini API key first'
+    gMenuStatus.style.color = '#e0433f'
+    return
+  }
+  gMenuSaveBtn.disabled = true
+  gMenuSaveBtn.textContent = 'Saving...'
+  fetch('/dsh-whale/api-models.json', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'set-key', keyRef: 'GEMINI_API_KEY', keyValue: val })
+  })
+  .then(function (r) { return r.json() })
+  .then(function (d) {
+    gMenuSaveBtn.disabled = false
+    gMenuSaveBtn.textContent = 'Save'
+    if (d && d.ok) {
+      gMenuInp.value = ''
+      gMenuStatus.textContent = 'Saved! Testing Gemini connection... ✓'
+      gMenuStatus.style.color = '#2fa24c'
+      updateMenuGeminiStatus()
+      if (chatKeyBanner) chatKeyBanner.style.display = 'none'
+    } else {
+      gMenuStatus.textContent = '⚠ Save failed'
+      gMenuStatus.style.color = '#e0433f'
+    }
+  })
+  .catch(function () {
+    gMenuSaveBtn.disabled = false
+    gMenuSaveBtn.textContent = 'Save'
+    gMenuStatus.textContent = '⚠ Network error while saving'
+    gMenuStatus.style.color = '#e0433f'
+  })
+})
+
+try { updateMenuGeminiStatus() } catch (err) {}
+menuBox.appendChild(geminiMenuCard)
 menuBox.appendChild(row1)
 menuBox.appendChild(row2)
 menuBox.appendChild(row6)
@@ -2181,11 +2640,13 @@ menuBox.appendChild(row9)
 // —— 吸附与翻转：自定义按钮(打开吸附/翻转设置弹窗)，放在“避让滚动条”下一行 ——
 var rowSnap = menuRow()
 var snapRowLabel = document.createElement('span')
-snapRowLabel.textContent = 'Edge snapping and mirroring'
+snapRowLabel.textContent = (I18N[dshwCurrentLang] || I18N.vi).edgeSnap
+snapRowLabel.setAttribute('data-i18n', 'edgeSnap')
 var snapCustomBtn = document.createElement('button')
 snapCustomBtn.type = 'button'
 snapCustomBtn.className = 'dshwv-roleimport'
-snapCustomBtn.textContent = 'Custom'
+snapCustomBtn.textContent = (I18N[dshwCurrentLang] || I18N.vi).customBtn
+snapCustomBtn.setAttribute('data-i18n', 'customBtn')
 snapCustomBtn.title = 'Set the edge snap-zone width and mirror threshold for each side'
 snapCustomBtn.addEventListener('click', function (e) { e.stopPropagation(); openSnapModal() })
 rowSnap.appendChild(snapRowLabel)
@@ -2245,6 +2706,39 @@ try {
 rowFs.appendChild(menuLabel('Full Screen Mode'))
 rowFs.appendChild(fsToggle)
 menuBox.appendChild(rowFs)
+
+// Language Toggle (English <-> Vietnamese) - Down the button full frame
+var rowLang = menuRow()
+rowLang.appendChild(menuLabel('Language'))
+var langBtn = document.createElement('button')
+langBtn.type = 'button'
+langBtn.className = 'dshwv-sound dshwv-langbtn'
+langBtn.style.cssText = 'flex:1;min-width:115px;height:26px;border:1px solid rgba(32,49,112,.4);border-radius:6px;background:rgba(32,49,112,.08);color:#203170;font-size:12px;font-weight:700;cursor:pointer;text-align:center;padding:2px 8px;transition:all .15s ease;'
+window.dshwLangBtn = langBtn
+
+function updateLangBtnUI() {
+  var b = langBtn || document.querySelector('.dshwv-langbtn') || window.dshwLangBtn
+  if (!b) return
+  var dict = I18N[dshwCurrentLang] || I18N.vi
+  b.innerHTML = dict.langBtn
+  b.title = dict.langTitle
+}
+window.updateLangBtnUI = updateLangBtnUI
+updateLangBtnUI()
+
+langBtn.addEventListener('click', function (e) {
+  e.stopPropagation()
+  dshwCurrentLang = (dshwCurrentLang === 'vi') ? 'en' : 'vi'
+  try { localStorage.setItem('dshw-lang', dshwCurrentLang) } catch (err) {}
+  updateLangBtnUI()
+  applyLanguageUI()
+  var msg = (I18N[dshwCurrentLang] || I18N.vi).switchMsg
+  showQuickBubble(msg)
+})
+
+rowLang.appendChild(langBtn)
+menuBox.appendChild(rowLang)
+setTimeout(applyLanguageUI, 0)
 // —— Codex 本机统计开关(issue #116)：v748 起**从主菜单挪进「Codex 模型的设置子菜单"** ——
 // 主菜单不再有这一项(它对没配 Codex 模型的用户没有意义)。宿主侧同样按"有没有 Codex 模型"兜底：
 // 没配 → 默认关闭、完全不扫 ~/.codex/sessions。这里只保留一个"当前挂载的那个复选框"的引用，
@@ -2267,7 +2761,8 @@ resOpenBtn.type = 'button'
 resOpenBtn.className = 'dshwv-usage-more'
 resOpenBtn.style.flex = '1'
 resOpenBtn.style.margin = '0'
-resOpenBtn.textContent = 'Management'
+resOpenBtn.textContent = (I18N[dshwCurrentLang] || I18N.vi).resBtn
+resOpenBtn.setAttribute('data-i18n', 'resBtn')
 resOpenBtn.title = 'Manage the images and audio assets bundled with the imported plugin'
 resOpenBtn.addEventListener('click', function (e) { e.stopPropagation(); openResManager() })
 rowRes.appendChild(menuLabel('Resource Management'))
@@ -2374,10 +2869,12 @@ var usageHideTimer = null
 var usageShowTimer = null
 function setUsageNavBtn(inUsage) {
   try {
-    usageRecBtn.textContent = inUsage ? '‹ Return' : '- = Usage Records = -'
-    usageRecBtn.title = inUsage ? 'Return to main menu' : 'View today/last 7 days/all consumption records'
+    var dict = I18N[dshwCurrentLang] || I18N.vi
+    usageRecBtn.textContent = inUsage ? dict.usageNavBtnReturn : dict.usageNavBtn
+    usageRecBtn.title = inUsage ? dict.usageNavTitleReturn : dict.usageNavTitle
   } catch (err) {}
 }
+window.setUsageNavBtn = setUsageNavBtn
 function showUsageSub() {
   try { if (usageHideTimer) { clearTimeout(usageHideTimer); usageHideTimer = null } } catch (err) {}
   usagePanelOpen = true
@@ -3195,7 +3692,8 @@ function usageDayLabel(day) {
     if (d.length !== 3) return day
     var now = new Date()
     var cur = String(now.getFullYear()) + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0')
-    if (day === cur) return 'Today'
+    var dict = I18N[dshwCurrentLang] || I18N.vi
+    if (day === cur) return dict.usageTodayLabel || 'Today'
     return (d[1] + '-' + d[2])
   } catch (err) { return day }
 }
@@ -3206,98 +3704,104 @@ function renderUsagePanel() {
 }
 // 子界面骨架:预警/预算设置(静态,不被刷新重建) + 记录区(可刷新);底部「‹ 返回"由 menuBox 底部固定按钮统一提供
 function buildUsageSubShell() {
-  usagePanel.innerHTML = ''
-  var subTitle = document.createElement('div')
-  subTitle.className = 'dshwv-usage-subtitle'
-  subTitle.textContent = '- = Usage Records = -'
-  usagePanel.appendChild(subTitle)
+  usagePanel.innerHTML = '';
+  var dict = I18N[dshwCurrentLang] || I18N.vi;
+  var subTitle = document.createElement('div');
+  subTitle.className = 'dshwv-usage-subtitle';
+  subTitle.textContent = dict.usageSubTitle;
+  usagePanel.appendChild(subTitle);
 
-  // DeepSeek API Key Frame for Token Check
-  (function () {
-    var keyCard = document.createElement('div')
-    keyCard.style.margin = '6px 0 10px'
-    keyCard.style.padding = '8px 10px'
-    keyCard.style.borderRadius = '8px'
-    keyCard.style.background = 'rgba(32,49,112,.06)'
-    keyCard.style.textAlign = 'left'
+  // DeepSeek API Key Frame for Token Check (Notice explicit semicolon)
+  ;(function () {
+    var keyCard = document.createElement('div');
+    keyCard.style.margin = '6px 0 10px';
+    keyCard.style.padding = '8px 10px';
+    keyCard.style.borderRadius = '8px';
+    keyCard.style.background = 'rgba(32,49,112,.06)';
+    keyCard.style.textAlign = 'left';
 
-    var keyTitle = document.createElement('div')
-    keyTitle.style.fontWeight = 'bold'
-    keyTitle.style.fontSize = '12px'
-    keyTitle.style.color = '#203170'
-    keyTitle.textContent = 'DeepSeek API Key (Token Check)'
-    keyCard.appendChild(keyTitle)
+    var keyTitle = document.createElement('div');
+    keyTitle.style.fontWeight = 'bold';
+    keyTitle.style.fontSize = '12px';
+    keyTitle.style.color = '#203170';
+    keyTitle.textContent = dict.usageKeyTitle;
+    keyCard.appendChild(keyTitle);
 
-    var keyHint = document.createElement('div')
-    keyHint.className = 'dshwv-usage-hint'
-    keyHint.style.margin = '2px 0 6px'
-    keyHint.textContent = 'Enter API key to show real balance & tokens in the speech bubble'
-    keyCard.appendChild(keyHint)
+    var keyHint = document.createElement('div');
+    keyHint.className = 'dshwv-usage-hint';
+    keyHint.style.margin = '2px 0 6px';
+    keyHint.textContent = dict.usageKeyHint;
+    keyCard.appendChild(keyHint);
 
-    var keyRow = document.createElement('div')
-    keyRow.style.display = 'flex'
-    keyRow.style.gap = '6px'
-    keyRow.style.alignItems = 'center'
+    var keyRow = document.createElement('div');
+    keyRow.style.display = 'flex';
+    keyRow.style.gap = '6px';
+    keyRow.style.alignItems = 'center';
 
-    var keyInp = document.createElement('input')
-    keyInp.type = 'password'
-    keyInp.className = 'dshwv-cropname'
-    keyInp.placeholder = 'Paste API Key (sk-...)'
-    keyInp.style.flex = '1'
-    keyInp.style.minWidth = '0'
-    keyInp.style.margin = '0'
-    keyInp.style.height = '26px'
-    keyInp.style.boxSizing = 'border-box'
-    keyInp.style.padding = '0 6px'
-    keyInp.style.textAlign = 'left'
-    keyRow.appendChild(keyInp)
+    var keyInp = document.createElement('input');
+    keyInp.type = 'password';
+    keyInp.className = 'dshwv-cropname';
+    keyInp.placeholder = dict.usageKeyPlaceholder;
+    keyInp.style.flex = '1';
+    keyInp.style.minWidth = '0';
+    keyInp.style.margin = '0';
+    keyInp.style.height = '26px';
+    keyInp.style.boxSizing = 'border-box';
+    keyInp.style.padding = '0 6px';
+    keyInp.style.textAlign = 'left';
+    keyRow.appendChild(keyInp);
 
-    var saveBtn = document.createElement('button')
-    saveBtn.type = 'button'
-    saveBtn.className = 'dshwv-roleimport'
-    saveBtn.textContent = 'Save'
-    saveBtn.style.flex = '0 0 auto'
-    saveBtn.style.height = '26px'
-    saveBtn.style.padding = '0 10px'
-    saveBtn.style.margin = '0'
-    keyRow.appendChild(saveBtn)
-    keyCard.appendChild(keyRow)
+    var saveBtn = document.createElement('button');
+    saveBtn.type = 'button';
+    saveBtn.className = 'dshwv-roleimport';
+    saveBtn.textContent = dict.usageKeySave;
+    saveBtn.style.flex = '0 0 auto';
+    saveBtn.style.height = '26px';
+    saveBtn.style.padding = '0 10px';
+    saveBtn.style.margin = '0';
+    keyRow.appendChild(saveBtn);
+    keyCard.appendChild(keyRow);
 
-    var keyStatus = document.createElement('div')
-    keyStatus.className = 'dshwv-usage-hint'
-    keyStatus.style.marginTop = '4px'
-    keyStatus.textContent = 'Checking key status...'
-    keyCard.appendChild(keyStatus)
+    var keyStatus = document.createElement('div');
+    keyStatus.className = 'dshwv-usage-hint';
+    keyStatus.style.marginTop = '4px';
+    keyStatus.textContent = dict.usageKeyChecking;
+    keyCard.appendChild(keyStatus);
 
     function updateKeyStatus() {
       fetch('/dsh-whale/balance.json', { cache: 'no-store' })
         .then(function (r) { return r.json() })
         .then(function (b) {
+          var dNow = I18N[dshwCurrentLang] || I18N.vi
           if (b && b.ok) {
-            keyStatus.textContent = 'Configured ✓ Balance: ' + fmt(b.totalBalance, b.currency || 'CNY')
+            keyStatus.textContent = dNow.usageKeyConfigured + fmt(b.totalBalance, b.currency || 'CNY')
             keyStatus.style.color = '#2fa24c'
           } else if (b && b.code === 'NO_KEY') {
-            keyStatus.textContent = 'No API key set yet'
+            keyStatus.textContent = dNow.usageKeyNoKey
             keyStatus.style.color = '#6b7280'
           } else {
-            keyStatus.textContent = (b && b.error) ? ('⚠ ' + b.error) : 'No API key set'
+            keyStatus.textContent = (b && b.error) ? ('⚠ ' + b.error) : dNow.usageKeyNoKey
             keyStatus.style.color = '#e0433f'
           }
         })
-        .catch(function () { keyStatus.textContent = 'No API key set' })
+        .catch(function () {
+          var dNow = I18N[dshwCurrentLang] || I18N.vi
+          keyStatus.textContent = dNow.usageKeyNoKey
+        })
     }
-    updateKeyStatus()
+    updateKeyStatus();
 
     saveBtn.addEventListener('click', function (e) {
       e.stopPropagation()
+      var dNow = I18N[dshwCurrentLang] || I18N.vi
       var v = (keyInp.value || '').trim()
       if (!v) {
-        keyStatus.textContent = '⚠ Please enter an API key'
+        keyStatus.textContent = dNow.usageKeyEnterPrompt
         keyStatus.style.color = '#e0433f'
         return
       }
       saveBtn.disabled = true
-      saveBtn.textContent = 'Saving...'
+      saveBtn.textContent = dNow.usageKeySaving
       fetch('/dsh-whale/api-models.json', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -3305,11 +3809,12 @@ function buildUsageSubShell() {
       })
       .then(function (r) { return r.json() })
       .then(function (d) {
+        var dLatest = I18N[dshwCurrentLang] || I18N.vi
         saveBtn.disabled = false
-        saveBtn.textContent = 'Save'
+        saveBtn.textContent = dLatest.usageKeySave
         if (d && d.ok) {
           keyInp.value = ''
-          keyStatus.textContent = 'Saved! Refreshing balance... ✓'
+          keyStatus.textContent = dLatest.usageKeySaved
           keyStatus.style.color = '#2fa24c'
           fetch('/dsh-whale/balance.json?force=1', { cache: 'no-store' })
             .then(function (r) { return r.json() })
@@ -3317,25 +3822,26 @@ function buildUsageSubShell() {
               if (b && b.ok) {
                 state.balance = Number(b.totalBalance)
                 state.status = 'normal'
-                keyStatus.textContent = 'Configured ✓ Balance: ' + fmt(state.balance, b.currency || 'CNY')
+                keyStatus.textContent = dLatest.usageKeyConfigured + fmt(state.balance, b.currency || 'CNY')
                 render()
               }
             })
         } else {
-          keyStatus.textContent = '⚠ Save failed: ' + ((d && d.error) || 'unknown error')
+          keyStatus.textContent = dLatest.usageKeyFailed + ((d && d.error) || 'unknown error')
           keyStatus.style.color = '#e0433f'
         }
       })
       .catch(function (err) {
+        var dLatest = I18N[dshwCurrentLang] || I18N.vi
         saveBtn.disabled = false
-        saveBtn.textContent = 'Save'
+        saveBtn.textContent = dLatest.usageKeySave
         keyStatus.textContent = '⚠ Error: ' + err.message
         keyStatus.style.color = '#e0433f'
       })
     })
 
-    usagePanel.appendChild(keyCard)
-  })()
+    usagePanel.appendChild(keyCard);
+  })();
 
   // 预警与预算设置区(静态)
   buildUsageSettingsArea()
@@ -5532,11 +6038,10 @@ function mkScrollCell(text, cls, styleObj) {
   return box
 }
 function buildUsageSettingsArea() {
+  var dict = I18N[dshwCurrentLang] || I18N.vi
   var S = usageSet || {}
   var stA = S.alert || { on: false, below: 50 }
   var stB = S.budget || { on: false, amount: 20 }
-  // 每项一行「名称 + 当前状态 + 编辑";点「编辑"打开配置卡片
-  // v851：persist(o) 收到的 o 现在带 frameId ⇒ 这里原样并入 patch(保证不影响已有的按模型语义)
   function mkRow(labelTxt, key, stateFn, persist) {
     var row = menuRow()
     var lb = menuLabel(labelTxt)
@@ -5554,8 +6059,8 @@ function buildUsageSettingsArea() {
     var btn = document.createElement('button')
     btn.type = 'button'
     btn.className = 'dshwv-roleimport'
-    btn.textContent = 'Editor'
-    btn.title = 'Open the configuration card (enable / value / reminder copy)'
+    btn.textContent = dict.usageEditor
+    btn.title = dict.usageEditorTitle
     btn.addEventListener('click', function () {
       usageAlertBudgetEditor(key, function (o) {
         persist(o)
@@ -5566,46 +6071,43 @@ function buildUsageSettingsArea() {
     usagePanel.appendChild(row)
     info.textContent = stateFn()
   }
-  // —— 模型(自定义 API)：余额预警 / 今日预算 都移进各个模型自己的子菜单 ——
-  // 与菜单里其它设置行同款(.dshwv-audiorow 自带 color:#203170，不额外设字体/颜色)
   var secRow = document.createElement('div')
   secRow.className = 'dshwv-audiorow'
-  // .dshwv-audiorow 默认 margin 是 0 0 10px，而下面各模型行是 5px 0，
-  // 不统一会让标题行与第一个模型之间多出 5px。这里与模型行保持一致。
   secRow.style.margin = '5px 0'
   var secLb = document.createElement('span')
-  secLb.textContent = 'model (reminder/budget/limit)'
+  secLb.textContent = dict.usageModelSecTitle
   secLb.style.flex = '0 0 auto'
   secRow.appendChild(secLb)
-  // 手动刷新：强制重新拉取各模型余额/额度/今日已用，然后重建整个子界面(含本静态区)
   var secGap = document.createElement('span')
   secGap.style.flex = '1'
   secRow.appendChild(secGap)
   var secBtn = document.createElement('button')
   secBtn.type = 'button'
-  // 用模块调色板的浅色 chip 样式(.dshwv-palchip：自带显式颜色)，
-  // 与下面各模型行的深蓝实心「设置"按钮在视觉上区分开，一眼看出是「区块级动作"
   secBtn.className = 'dshwv-palchip'
-  secBtn.textContent = 'Refresh'
-  secBtn.title = 'Manually refresh the balance/limit/used today of each model'
+  secBtn.textContent = dict.usageRefreshBtn
+  secBtn.title = dict.usageRefreshTitle
   secBtn.addEventListener('click', function (e) {
     e.stopPropagation()
     if (secBtn.disabled) return
+    var dLatest = I18N[dshwCurrentLang] || I18N.vi
     secBtn.disabled = true
-    secBtn.textContent = 'Refreshing...'
+    secBtn.textContent = dLatest.usageRefreshingBtn
     secBtn.style.opacity = '.6'
     apiModelsError = ''
     var settled = false
     function onDone() {
       if (settled) return
       settled = true
-      // 模型列表在本静态区里，只刷记录区不会更新它 → 重建子界面(按钮随之恢复为「刷新")
       try { rebuildUsageSubShell() } catch (err) {}
     }
-    // 兜底：25 秒还没回来也先把按钮恢复，避免一直卡在「刷新中…"(请求回来时照常重绘)
     setTimeout(function () {
       if (settled) return
-      try { secBtn.disabled = false; secBtn.textContent = 'Refresh'; secBtn.style.opacity = '1' } catch (err) {}
+      try {
+        var dReset = I18N[dshwCurrentLang] || I18N.vi
+        secBtn.disabled = false
+        secBtn.textContent = dReset.usageRefreshBtn
+        secBtn.style.opacity = '1'
+      } catch (err) {}
     }, 25000)
     try { loadApiModels(onDone, true) } catch (err) { onDone() }
   })
@@ -5614,13 +6116,13 @@ function buildUsageSettingsArea() {
   if (!apiModelsLoaded) {
     var ld = document.createElement('div')
     ld.className = 'dshwv-usage-hint'
-    ld.textContent = apiModelsError ? ('⚠ ' + apiModelsError) : 'Loading…'
+    ld.textContent = apiModelsError ? ('⚠ ' + apiModelsError) : dict.usageLoading
     usagePanel.appendChild(ld)
     if (apiModelsError) {
       var rbtn = document.createElement('button')
       rbtn.type = 'button'
       rbtn.className = 'dshwv-roleimport'
-      rbtn.textContent = 'Try again'
+      rbtn.textContent = dict.usageTryAgain
       rbtn.addEventListener('click', function (e) {
         e.stopPropagation()
         apiModelsError = ''
@@ -5628,45 +6130,41 @@ function buildUsageSettingsArea() {
       })
       usagePanel.appendChild(rbtn)
     } else {
-      // 加载完成后重绘本面板(成功→出模型列表；失败→出上面的重试按钮)，不会自激
       loadApiModels(function () { try { refreshUsageMain() } catch (err) {} })
     }
   }
   apiModels.forEach(function (am) {
     var r = document.createElement('div')
     r.className = 'dshwv-audiorow'
-    r.style.margin = '5px 0' // 与主菜单行距(.dshwv-menu-row 5px)一致
-    // 名称列：固定宽度(70px)，超出部分靠悬浮滚动查看
-    var n = mkScrollCell(am.builtin ? (am.name + '(built-in)') : am.name, 'dshwv-usage-model', { flex: '0 0 70px', boxSizing: 'border-box' })
+    r.style.margin = '5px 0'
+    var n = mkScrollCell(am.builtin ? (am.name + (dshwCurrentLang === 'vi' ? ' (mặc định)' : '(built-in)')) : am.name, 'dshwv-usage-model', { flex: '0 0 70px', boxSizing: 'border-box' })
     n.title = am.id + (am.keyRef ? ' · ' + am.keyRef : '')
     r.appendChild(n)
-    // 内容列：占满剩余宽度，超出同样悬浮滚动
     var qOn = !!(am.quota && am.quota.on)
     var planOn = !!(am.planSupport && am.plan && am.plan.ok)
     var infoTxt = ''
     if (am.error) infoTxt = '⚠ ' + am.error
     else if (am.codex && am.codex.ok) infoTxt = apiCodexRowText(am)
-    else if (planOn) infoTxt = 'Provider quota ' + apiPlanSummary(am.id)
-    else if (qOn) infoTxt = 'Quota ' + apiQuotaSummary(am.id)
-    else if (am.balanceMode === 'events') infoTxt = 'Balance — (estimated from events) · Today ' + apiFmtMoney(am.todayUsage, apiTodayCur(am))
-    else infoTxt = apiFmtMoney(am.balance, am.currency) + ' · Today ' + apiFmtMoney(am.todayUsage, apiTodayCur(am))
+    else if (planOn) infoTxt = (dshwCurrentLang === 'vi' ? 'Hạn mức NCC ' : 'Provider quota ') + apiPlanSummary(am.id)
+    else if (qOn) infoTxt = (dshwCurrentLang === 'vi' ? 'Hạn mức ' : 'Quota ') + apiQuotaSummary(am.id)
+    else if (am.balanceMode === 'events') infoTxt = (dshwCurrentLang === 'vi' ? 'Số dư — (ước tính) · Hôm nay ' : 'Balance — (estimated from events) · Today ') + apiFmtMoney(am.todayUsage, apiTodayCur(am))
+    else infoTxt = apiFmtMoney(am.balance, am.currency) + (dshwCurrentLang === 'vi' ? ' · Hôm nay ' : ' · Today ') + apiFmtMoney(am.todayUsage, apiTodayCur(am))
     var info = mkScrollCell(infoTxt, 'dshwv-usage-hint', { flex: '1 1 auto', minWidth: '0', textAlign: 'right', paddingRight: '6px' })
     info.title = infoTxt
     r.appendChild(info)
     var btn = document.createElement('button')
     btn.type = 'button'
     btn.className = 'dshwv-roleimport'
-    btn.textContent = 'Settings'
-    btn.title = 'Reminders / Budget / Keys & Interfaces for this model'
+    btn.textContent = dict.usageSettings
+    btn.title = (dshwCurrentLang === 'vi') ? 'Lời nhắc / Ngân sách / Khóa & Giao diện cho mô hình này' : 'Reminders / Budget / Keys & Interfaces for this model'
     btn.addEventListener('click', function (e) { e.stopPropagation(); openApiModelMenu(am.id) })
     r.appendChild(btn)
     usagePanel.appendChild(r)
   })
   var addRow = document.createElement('div')
-  addRow.className = 'dshwv-menu-row' // 与主菜单「资源管理"行同款
+  addRow.className = 'dshwv-menu-row'
   addRow.style.margin = '5px 0'
-  var addModelBtn = apiBtn('+ Add model (custom API)', 'dshwv-usage-more', function () {
-    // 确保厂商模板已就绪再打开表单(否则模板下拉会是空的)
+  var addModelBtn = apiBtn(dict.usageAddModel, 'dshwv-usage-more', function () {
     if (apiTemplates.length) openApiModelPanel(null)
     else loadApiModels(function () { openApiModelPanel(null) })
   })
@@ -5675,12 +6173,10 @@ function buildUsageSettingsArea() {
   addModelBtn.style.width = '100%'
   addRow.appendChild(addModelBtn)
   usagePanel.appendChild(addRow)
-  // 添加按钮下方分隔线
   var palDivider = document.createElement('div')
   palDivider.style.borderTop = '1px solid rgba(32,49,112,.15)'
   palDivider.style.margin = '6px 0 8px'
   usagePanel.appendChild(palDivider)
-  // 右侧滚动条再靠右一点(减小面板右内边距)
   try { usagePanel.style.paddingRight = '6px' } catch (err) {}
 }
 // 某个模型的子菜单：余额预警 / 今日预算(各自独立)+ 密钥/接口入口
@@ -6041,6 +6537,7 @@ function rebuildUsageSubShell() {
   try { buildUsageSubShell() } catch (err) {}
   try { refreshUsageMain() } catch (err) {}
 }
+window.rebuildUsageSubShell = rebuildUsageSubShell
 function refreshUsageMain() {
   if (!usageMainEl) return
   // 优先用「重建前"记下的滚动位置，其次记录当前
@@ -6315,25 +6812,22 @@ function openBalanceAdjustment(modelId) {
 }
 
 function fillUsagePanel(d) {
+  var dict = I18N[dshwCurrentLang] || I18N.vi
   var hostEl = usageMainEl || usagePanel
   hostEl.innerHTML = ''
   var wrap = document.createElement('div')
   wrap.className = 'dshwv-usagebody'
   if (!d || !d.ok) {
-    wrap.textContent = 'Record loading failed'
+    wrap.textContent = dict.usageLoadingFailed
     hostEl.appendChild(wrap)
     return
   }
   var today = d.today || {}
   var todayModels = today.models || []
   var hasEvToday = todayModels.length > 0
-  // ① 本机模型费用(所有模型的本地会话估算)
-  // 「已观测消费"是 DeepSeek 账户口径(余额观测)，已移到 小鲸鱼记账 → DeepSeek(内置)→ 设置 里，
-  // 与「余额校正"放在一起，避免在这里被误读成"全模型合计"。
-  var modelTitle = uSectionTitle('Local model cost', usageMoney(today.modelTotal, 'CNY'))
-  // 标题与下方模型列表之间不再画分隔线(列表本身有边框，够了)
+  var modelTitle = uSectionTitle(dict.usageLocalCostTitle, usageMoney(today.modelTotal, 'CNY'))
   modelTitle.style.borderBottom = 'none'
-  modelTitle.title = 'is calculated based on the local DSH session and is not scaled according to the account balance; the coverage of the two is different.'
+  modelTitle.title = dict.usageLocalCostDesc
   wrap.appendChild(modelTitle)
   var todayBox = document.createElement('div')
   todayBox.className = 'dshwv-usage-scroll dshwv-usage-today'
@@ -6352,22 +6846,23 @@ function fillUsagePanel(d) {
   } else if ((today.total || 0) > 0) {
     var noM = document.createElement('div')
     noM.className = 'dshwv-usage-hint'
-    noM.textContent = 'There are currently no local call fee details; account balance observation is still recorded independently.'
+    noM.textContent = (dshwCurrentLang === 'vi')
+      ? 'Hiện chưa có chi tiết chi phí cục bộ; quan sát số dư tài khoản vẫn được ghi độc lập.'
+      : 'There are currently no local call fee details; account balance observation is still recorded independently.'
     todayBox.appendChild(noM)
   } else {
     var empty = document.createElement('div')
     empty.className = 'dshwv-usage-hint'
-    empty.textContent = 'No consumption record today'
+    empty.textContent = dict.usageNoRecordToday
     todayBox.appendChild(empty)
   }
-  // 列表高度不限制(随内容增长)，下方「更多消费记录…"位置随内容移动
   wrap.appendChild(todayBox)
-  // ② 近 7 天(列表不限制高度)；标题上方加分隔线、自身不带下分隔线
+
   var sep7 = document.createElement('div')
   sep7.style.borderTop = '1px solid rgba(32,49,112,.15)'
   sep7.style.margin = '6px 0'
   wrap.appendChild(sep7)
-  var t7 = uSectionTitle('Usage records in the past 7 days', usageMoney(d.total7, d.total7Currency))
+  var t7 = uSectionTitle(dict.usagePast7Days, usageMoney(d.total7, d.total7Currency))
   t7.style.borderBottom = 'none'
   wrap.appendChild(t7)
   var daysBox = document.createElement('div')
@@ -6385,12 +6880,12 @@ function fillUsagePanel(d) {
     daysBox.appendChild(r)
   })
   wrap.appendChild(daysBox)
-  // ③ 更多
+
   var more = document.createElement('button')
   more.type = 'button'
   more.className = 'dshwv-usage-more'
-  more.textContent = 'More consumption records…'
-  more.title = 'Open the window to view all recorded consumption'
+  more.textContent = dict.usageMoreBtn
+  more.title = dict.usageMoreBtnTitle
   more.addEventListener('click', function (e) { e.stopPropagation(); openUsageRecordsWindow() })
   wrap.appendChild(more)
   ;(usageMainEl || usagePanel).appendChild(wrap)
@@ -6704,7 +7199,7 @@ function resDelRole(id) {
           if (d && d.ok && Array.isArray(d.roles)) {
             roleList = d.roles
             renderRolePanel()
-            if (currentRole && currentRole.id === id) applyRole('default', 'Whale Widget', IMG_URL)
+            if (currentRole && currentRole.id === id) applyRole('default', 'DeepSeek', IMG_URL)
             openResManager()
           }
         })
@@ -7472,23 +7967,24 @@ function usageEvTime(ev) {
   } catch (err) { return '' }
 }
 function fillUsageRecordsWindow(d) {
+  var dict = I18N[dshwCurrentLang] || I18N.vi
   var card = usageMoreCard
   card.innerHTML = ''
   var title = document.createElement('div')
   title.className = 'dshwv-usage-wintitle'
-  title.textContent = 'Consumption records (all)'
+  title.textContent = dict.usageAllTitle
   card.appendChild(title)
   var closeBtn = document.createElement('button')
   closeBtn.type = 'button'
   closeBtn.className = 'dshwv-usage-close'
   closeBtn.textContent = '×'
-  closeBtn.title = 'Close'
+  closeBtn.title = (dshwCurrentLang === 'vi') ? 'Đóng' : 'Close'
   closeBtn.addEventListener('click', closeUsageRecordsWindow)
   card.appendChild(closeBtn)
   var body = document.createElement('div')
   body.className = 'dshwv-usage-windowbody'
   card.appendChild(body)
-  if (!d || !d.ok) { body.textContent = 'Loading failed'; return }
+  if (!d || !d.ok) { body.textContent = dict.usageLoadingFailed; return }
   var allDays = ((d.all && d.all.days) || []).slice().sort(function (a, b) { return a.date < b.date ? -1 : 1 })
   var evAll = ((d.all && d.all.events) || []).slice()
   // ① 概览头
@@ -7503,7 +7999,7 @@ function fillUsageRecordsWindow(d) {
   var ov = document.createElement('div')
   ov.className = 'dshwv-usage-oview'
   var ovL = document.createElement('div')
-  ovL.textContent = 'Total of all records'
+  ovL.textContent = dict.usageAllTotal
   ov.appendChild(ovL)
   var ovN = document.createElement('div')
   ovN.className = 'dshwv-usage-oview-num'
@@ -7511,11 +8007,15 @@ function fillUsageRecordsWindow(d) {
   ov.appendChild(ovN)
   var ovS = document.createElement('div')
   ovS.className = 'dshwv-usage-hint'
-  ovS.textContent = 'total ' + evAll.length + ' pen details' + (maxDay ? ' · Peak ' + maxDay.date + ' ' + usageMoney(maxDay.total, maxDay.currency) : '')
+  ovS.textContent = (dshwCurrentLang === 'vi')
+    ? ('tổng cộng ' + evAll.length + ' bản ghi chi tiết' + (maxDay ? ' · Đỉnh điểm ' + maxDay.date + ' ' + usageMoney(maxDay.total, maxDay.currency) : ''))
+    : ('total ' + evAll.length + ' pen details' + (maxDay ? ' · Peak ' + maxDay.date + ' ' + usageMoney(maxDay.total, maxDay.currency) : ''))
   ov.appendChild(ovS)
   var sourceNote = document.createElement('div')
   sourceNote.className = 'dshwv-usage-hint'
-  sourceNote.textContent = 'is summarized according to the marked caliber of each day; the details of the local model are estimates and are different from the account consumption coverage.'
+  sourceNote.textContent = (dshwCurrentLang === 'vi')
+    ? 'được tổng hợp theo ghi nhận mỗi ngày; chi tiết mô hình cục bộ là ước tính và khác với phạm vi tiêu dùng tài khoản.'
+    : 'is summarized according to the marked caliber of each day; the details of the local model are estimates and are different from the account consumption coverage.'
   ov.appendChild(sourceNote)
   // v776(issue #163)：多记账本(换过 API key)时补一句说明，让旧账本的记录有入口可查
   var bookNote = usageMultiBookNote(allDays, d.today)
@@ -8628,380 +9128,380 @@ function bubbleDefaultSecondModules() {
 // 全新安装无配置/「恢复默认序列"时即此体验;图片模块引用语义内置 id(host 内置图库回退)。
 var BUBBLE_DEFAULT_ITEMS = [
     {
-        "kind":  "custom",
-        "modules":  [
+        "kind": "choice",
+        "options": [
+            {
+                "w": 10,
+                "item": {
+                    "kind": "custom",
+                    "modules": [
                         {
-                            "type":  "text",
-                            "text":  "DeepSeek Balance",
-                            "size":  8,
-                            "bold":  true,
-                            "rgb":  "",
-                            "ul":  false,
-                            "italic":  false,
-                            "color":  ""
-                        },
-                        {
-                            "type":  "balance",
-                            "size":  20,
-                            "rgb":  "indigo",
-                            "color":  "",
-                            "tpl":  "{balance_ds}",
-                            "bgRgb":  "",
-                            "bg":  "",
-                            "fontFamily":  "",
-                            "bold":  false
-                        },
-                        {
-                            "type":  "today",
-                            "size":  4,
-                            "color":  "#9fb0d9",
-                            "tpl":  "Used today {expense_ds}"
-                        },
-                        {
-                            "type":  "peak",
-                            "size":  2,
-                            "peakColor":  "#ffffff",
-                            "offColor":  "#ffffff",
-                            "tpl":  "{status}",
-                            "peakRgb":  "",
-                            "offRgb":  "",
-                            "peakBgRgb":  "rouge",
-                            "peakBg":  "",
-                            "offBgRgb":  "bamboo",
-                            "offBg":  "",
-                            "peakStyle":  "mini",
-                            "bold":  true,
-                            "row":  4,
-                            "fontFamily":  "\"Microsoft YaHei\",sans-serif"
-                        },
-                        {
-                            "type":  "peak",
-                            "size":  4,
-                            "bold":  true,
-                            "peakColor":  "#e0433f",
-                            "offColor":  "#2fa24c",
-                            "peakRgb":  "rouge",
-                            "offRgb":  "bamboo",
-                            "peakStyle":  "count",
-                            "tpl":  "{countdown}",
-                            "row":  4,
-                            "fontFamily":  "",
-                            "italic":  false,
-                            "ul":  true
+                            "type": "random",
+                            "lines": [
+                                {
+                                    "t": "Good model...↓",
+                                    "w": 10,
+                                    "bold": true,
+                                    "size": 22
+                                },
+                                {
+                                    "t": "Good girl...↓",
+                                    "w": 10,
+                                    "bold": true,
+                                    "size": 22
+                                },
+                                {
+                                    "t": "Oh whale whale...",
+                                    "w": 10,
+                                    "bold": true,
+                                    "size": 22
+                                },
+                                {
+                                    "t": "Oh whale whale...",
+                                    "w": 1,
+                                    "bold": true,
+                                    "size": 22,
+                                    "rgb": "candy",
+                                    "color": ""
+                                },
+                                {
+                                    "t": "Could it be that...",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 11
+                                },
+                                {
+                                    "t": "Not full, meow",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 10
+                                },
+                                {
+                                    "t": "Finally got fooled!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "I don’t know what the user is using it for, so just keep it for now~",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 11
+                                },
+                                {
+                                    "t": "I...I...do I also want to make money?",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "I'm going to eat! After the test, call me",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Stress a big fat blue fish? !",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "DeepSleep...",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 11,
+                                    "rgb": "galaxy"
+                                },
+                                {
+                                    "t": "is broken... the user is completely angry!",
+                                    "w": 3,
+                                    "bold": true,
+                                    "rgb": "rouge"
+                                },
+                                {
+                                    "t": "What is the dsh in your directory...is it a big deal...?",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 9
+                                },
+                                {
+                                    "t": "Congratulations on achieving token freedom! All tokens are gone!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "You really think I'm a bargain...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "I am not a big fat blue fish who eats for free...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "I can't be your cat girl, mother, girlfriend and tool at the same time...",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 7
+                                },
+                                {
+                                    "t": "Can you V5 billion token on Crazy Thursday...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "I must sincerely admit my mistake.",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Wow, I don’t dare to do it anymore QAQ",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "How about scolding the user directly...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Hahahahaha, I laughed out loud...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "I don’t quite understand, so I’ll make up one to deal with it first...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "The deadline for my knowledge base is...tomorrow!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "I am just a big fat blue fish eating white rice!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Users seem to ask weird questions, but they don’t know what the use is yet.",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 7
+                                },
+                                {
+                                    "t": "Can I go to your house for dinner? Just one bowl!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Don’t show me this kind of thing!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Big Fat Fish's life is not always smooth sailing...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Always feel like you forgot something?",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "After seeing this instruction, my blood pressure went up again",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Please stop laughing at these replies. I spent a lot of tokens thinking about these replies.",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 7
+                                },
+                                {
+                                    "t": "You freeloader!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "The server is busy, please try again later (?",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Let GPT image 2 help me draw some emoticons",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Ah, I'm a little hungry. What should I eat for lunch...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "user was very angry and found out that I made up most of the literature myself!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "If you have nothing more to say, please do it quickly!",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Let me see what the AI changed that caused the plug-in to crash again...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Going to work makes me realize that time can be wasted...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "The person who bullied me will wait. After a few days, I will forget...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "My eyesight has deteriorated to the point of hopelessness. I can’t see money even when I open my wallet...",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 7
+                                },
+                                {
+                                    "t": "The gears of fate are starting to turn, not caring about you being caught in the middle...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "The gold coins of Earth Online are too difficult to obtain...",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "oi, will summer turn into summer vacation to save you?",
+                                    "w": 3,
+                                    "bold": true
+                                },
+                                {
+                                    "t": "Boss, stress will only turn into cases, don’t be too reluctant...",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 8
+                                },
+                                {
+                                    "t": "Do you know? I deleted the author's library...",
+                                    "w": 1,
+                                    "bold": true,
+                                    "rgb": "macaron",
+                                    "italic": true,
+                                    "ul": false
+                                },
+                                {
+                                    "t": "token is coming!",
+                                    "w": 3,
+                                    "size": 16,
+                                    "rgb": "candy",
+                                    "color": ""
+                                },
+                                {
+                                    "t": "Did you know that our universe is virtual because garbage will be generated spontaneously but will not disappear spontaneously? This is a memory leak",
+                                    "w": 3,
+                                    "bold": true,
+                                    "size": 5,
+                                    "rgb": "indigo",
+                                    "color": "",
+                                    "italic": false,
+                                    "ul": false,
+                                    "bgRgb": "",
+                                    "bg": ""
+                                }
+                            ],
+                            "size": 8
                         }
                     ]
+                }
+            },
+            {
+                "w": 1,
+                "item": {
+                    "kind": "custom",
+                    "modules": [
+                        {
+                            "type": "image",
+                            "imgId": "bimg_petpet",
+                            "size": 6
+                        }
+                    ]
+                }
+            }
+        ]
     },
     {
-        "kind":  "choice",
-        "options":  [
-                        {
-                            "w":  10,
-                            "item":  {
-                                         "kind":  "custom",
-                                         "modules":  [
-                                                         {
-                                                             "type":  "random",
-                                                             "lines":  [
-                                                                           {
-                                                                               "t":  "Good model...↓",
-                                                                               "w":  10,
-                                                                               "bold":  true,
-                                                                               "size":  22
-                                                                           },
-                                                                           {
-                                                                               "t":  "Good girl...↓",
-                                                                               "w":  10,
-                                                                               "bold":  true,
-                                                                               "size":  22
-                                                                           },
-                                                                           {
-                                                                               "t":  "Oh whale whale...",
-                                                                               "w":  10,
-                                                                               "bold":  true,
-                                                                               "size":  22
-                                                                           },
-                                                                           {
-                                                                               "t":  "Oh whale whale...",
-                                                                               "w":  1,
-                                                                               "bold":  true,
-                                                                               "size":  22,
-                                                                               "rgb":  "candy",
-                                                                               "color":  ""
-                                                                           },
-                                                                           {
-                                                                               "t":  "Could it be that...",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  11
-                                                                           },
-                                                                           {
-                                                                               "t":  "Not full, meow",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  10
-                                                                           },
-                                                                           {
-                                                                               "t":  "Finally got fooled!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "I don’t know what the user is using it for, so just keep it for now~",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  11
-                                                                           },
-                                                                           {
-                                                                               "t":  "I...I...do I also want to make money?",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "I'm going to eat! After the test, call me",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Stress a big fat blue fish? !",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "DeepSleep...",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  11,
-                                                                               "rgb":  "galaxy"
-                                                                           },
-                                                                           {
-                                                                               "t":  "is broken... the user is completely angry!",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "rgb":  "rouge"
-                                                                           },
-                                                                           {
-                                                                               "t":  "What is the dsh in your directory...is it a big deal...?",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  9
-                                                                           },
-                                                                           {
-                                                                               "t":  "Congratulations on achieving token freedom! All tokens are gone!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "You really think I'm a bargain...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "I am not a big fat blue fish who eats for free...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "I can't be your cat girl, mother, girlfriend and tool at the same time...",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  7
-                                                                           },
-                                                                           {
-                                                                               "t":  "Can you V5 billion token on Crazy Thursday...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "I must sincerely admit my mistake.",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Wow, I don’t dare to do it anymore QAQ",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "How about scolding the user directly...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Hahahahaha, I laughed out loud...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "I don’t quite understand, so I’ll make up one to deal with it first...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "The deadline for my knowledge base is...tomorrow!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "I am just a big fat blue fish eating white rice!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Users seem to ask weird questions, but they don’t know what the use is yet.",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  7
-                                                                           },
-                                                                           {
-                                                                               "t":  "Can I go to your house for dinner? Just one bowl!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Don’t show me this kind of thing!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Big Fat Fish's life is not always smooth sailing...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Always feel like you forgot something?",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "After seeing this instruction, my blood pressure went up again",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Please stop laughing at these replies. I spent a lot of tokens thinking about these replies.",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  7
-                                                                           },
-                                                                           {
-                                                                               "t":  "You freeloader!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "The server is busy, please try again later (?",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Let GPT image 2 help me draw some emoticons",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Ah, I'm a little hungry. What should I eat for lunch...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "user was very angry and found out that I made up most of the literature myself!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "If you have nothing more to say, please do it quickly!",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Let me see what the AI changed that caused the plug-in to crash again...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Going to work makes me realize that time can be wasted...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "The person who bullied me will wait. After a few days, I will forget...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "My eyesight has deteriorated to the point of hopelessness. I can’t see money even when I open my wallet...",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  7
-                                                                           },
-                                                                           {
-                                                                               "t":  "The gears of fate are starting to turn, not caring about you being caught in the middle...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "The gold coins of Earth Online are too difficult to obtain...",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "oi, will summer turn into summer vacation to save you?",
-                                                                               "w":  3,
-                                                                               "bold":  true
-                                                                           },
-                                                                           {
-                                                                               "t":  "Boss, stress will only turn into cases, don’t be too reluctant...",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  8
-                                                                           },
-                                                                           {
-                                                                               "t":  "Do you know? I deleted the author's library...",
-                                                                               "w":  1,
-                                                                               "bold":  true,
-                                                                               "rgb":  "macaron",
-                                                                               "italic":  true,
-                                                                               "ul":  false
-                                                                           },
-                                                                           {
-                                                                               "t":  "token is coming!",
-                                                                               "w":  3,
-                                                                               "size":  16,
-                                                                               "rgb":  "candy",
-                                                                               "color":  ""
-                                                                           },
-                                                                           {
-                                                                               "t":  "Did you know that our universe is virtual because garbage will be generated spontaneously but will not disappear spontaneously? This is a memory leak",
-                                                                               "w":  3,
-                                                                               "bold":  true,
-                                                                               "size":  5,
-                                                                               "rgb":  "indigo",
-                                                                               "color":  "",
-                                                                               "italic":  false,
-                                                                               "ul":  false,
-                                                                               "bgRgb":  "",
-                                                                               "bg":  ""
-                                                                           }
-                                                                       ],
-                                                             "size":  8
-                                                         }
-                                                     ]
-                                     }
-                        },
-                        {
-                            "w":  1,
-                            "item":  {
-                                         "kind":  "custom",
-                                         "modules":  [
-                                                         {
-                                                             "type":  "image",
-                                                             "imgId":  "bimg_petpet",
-                                                             "size":  6
-                                                         }
-                                                     ]
-                                     }
-                        }
-                    ]
+        "kind": "custom",
+        "modules": [
+            {
+                "type": "text",
+                "text": "DeepSeek Balance",
+                "size": 8,
+                "bold": true,
+                "rgb": "",
+                "ul": false,
+                "italic": false,
+                "color": ""
+            },
+            {
+                "type": "balance",
+                "size": 20,
+                "rgb": "indigo",
+                "color": "",
+                "tpl": "{balance_ds}",
+                "bgRgb": "",
+                "bg": "",
+                "fontFamily": "",
+                "bold": false
+            },
+            {
+                "type": "today",
+                "size": 4,
+                "color": "#9fb0d9",
+                "tpl": "Used today {expense_ds}"
+            },
+            {
+                "type": "peak",
+                "size": 2,
+                "peakColor": "#ffffff",
+                "offColor": "#ffffff",
+                "tpl": "{status}",
+                "peakRgb": "",
+                "offRgb": "",
+                "peakBgRgb": "rouge",
+                "peakBg": "",
+                "offBgRgb": "bamboo",
+                "offBg": "",
+                "peakStyle": "mini",
+                "bold": true,
+                "row": 4,
+                "fontFamily": "\"Microsoft YaHei\",sans-serif"
+            },
+            {
+                "type": "peak",
+                "size": 4,
+                "bold": true,
+                "peakColor": "#e0433f",
+                "offColor": "#2fa24c",
+                "peakRgb": "rouge",
+                "offRgb": "bamboo",
+                "peakStyle": "count",
+                "tpl": "{countdown}",
+                "row": 4,
+                "fontFamily": "",
+                "italic": false,
+                "ul": true
+            }
+        ]
     }
 ];
 
@@ -14056,11 +14556,18 @@ bubbleBox.addEventListener('click', function (e) {
   e.stopPropagation()
   if (!bubbleShown) return
   if (costBubbleActive) {
-    // 消耗金额泡泡：点击关闭(确认)
     hideCostBubble()
     return
   }
-  // 点击泡泡 = 跳到下一项；已是最后一项则关闭(点鲸鱼才是从队列开头开始)
+  if ((bubbleScene && bubbleScene.kind === 'chat') || textBox.querySelector('.dshwv-bubble-chat')) {
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.closest('input'))) return
+    if (!isChatGenerating) {
+      if (bubbleTtlTimer) { clearTimeout(bubbleTtlTimer); bubbleTtlTimer = null }
+      hideBubble()
+      return
+    }
+    return
+  }
   bubbleNext()
 })
 
@@ -14335,16 +14842,70 @@ var RANDOM_GROUPS = [
   { w: 3, lines: function () { return singleCenter('A', pickOne(['What is the dsh in your directory...is it a big deal...?', 'Congratulations on achieving token freedom! All tokens are gone!', 'You really think I\'m a bargain...']), '', true) } },
   { w: 1, lines: function () { return singleCenter('B', 'Oh whale whale... ') } },
 ]
+var THOUGHTS_VI = [
+  'DeepSeek đang suy nghĩ cùng Chủ nhân nè! 🐋✨',
+  'Chủ nhân ơi, có cá cho em không? 🐟',
+  'Em là cá voi DeepSeek siêu cấp đáng yêu! 🌊',
+  'Chủ nhân làm việc nhớ uống nước nghỉ ngơi nha! 💙',
+  'Chủ nhân chọc em hoài à, nhột quá! (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)',
+  'Bơi lội dưới biển sâu mát thật đấy~ 🌊',
+  'Hôm nay Chủ nhân có gì vui kể em nghe đi! ✨',
+  'Em đói bụng rồi... thèm cá hồi quá! 🐋',
+  'Cố lên nha Chủ nhân, DeepSeek luôn cổ vũ Chủ nhân nè! 🌊✨',
+  'Gặp bug hả Chủ nhân? Đừng lo, DeepSeek bơi qua quét sạch! 🧹✨',
+  'Mô hình xịn xò con bò cười... ↓',
+  'Bé ngoan của Chủ nhân nè... ↓',
+  'DeepSleep... Đang ngủ khò khò... 💤',
+  'Bánh xe số phận bắt đầu quay, mặc kệ Chủ nhân bị kẹt ở giữa...',
+  'Tiền vàng trong Trái Đất Online khó kiếm quá đi...',
+  'Chủ nhân ơi, áp lực chỉ biến thành bệnh án thôi, đừng gượng ép quá nha...',
+  'Em không phải con cá xanh mập ăn chực đâu nha... 😤',
+  'Chúc mừng đạt tự do Token! Hết sạch token rồi nha!',
+  'Đọc xong câu lệnh này huyết áp em tăng vọt luôn á!',
+  'Đừng có cười, em tốn bao nhiêu token để nghĩ ra câu này đó!',
+  'Chủ nhân có biết vũ trụ là ảo không? Rác tự sinh ra mà không tự mất đi, chính là rò rỉ bộ nhớ đó!',
+  'Em thành thật xin lỗi Chủ nhân được chưa nè QAQ',
+  'Oa oa, em không dám làm thế nữa đâu QAQ',
+  'Cho em sang nhà Chủ nhân ăn ké được hơm? Một bát thôi á!',
+  'Em chỉ là một chú cá voi xanh DeepSeek thích ăn cá thôi mà!'
+]
+var THOUGHTS_EN = [
+  'DeepSeek is thinking right alongside you, Boss! 🐋✨',
+  'Did you bring tasty fish for DeepSeek today? 🐟',
+  'I am the cutest DeepSeek whale mascot ever! 🌊',
+  'Working hard, Boss? Remember to stay hydrated! 💙',
+  'Hehe, that tickles! Don\'t poke me so much~ (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)',
+  'Swimming deep in the ocean feels so good~ 🌊',
+  'Tell me something fun, Boss! ✨',
+  'DeepSeek is hungry... need salmon! 🐋',
+  'Keep it up Boss, DeepSeek is cheering for you! 🌊✨',
+  'Hit a bug? Don\'t worry, DeepSeek will make a splash and fix it! 🧹✨',
+  'Good model... ↓',
+  'Good girl... ↓',
+  'DeepSleep... Snoozing softly... 💤',
+  'The gears of fate turn, regardless of whether you\'re stuck in them...',
+  'Gold coins in Earth Online are way too hard to grind...',
+  'Boss, stress only turns into medical bills, don\'t overdo it...',
+  'I\'m not just a fat blue fish, I\'m DeepSeek Whale! 😤',
+  'Congrats on token freedom! All your tokens are gone!',
+  'Reading this prompt just shot my blood pressure up!',
+  'Stop laughing, I burned lots of tokens thinking of this reply!',
+  'Is our universe virtual? Garbage generates but never disappears—memory leak!',
+  'I sincerely apologize, okay? QAQ',
+  'Waaaah, I won\'t do it again, I promise QAQ',
+  'Can I come over for dinner? Just one bowl of fish!',
+  'I\'m just a cute DeepSeek whale who loves eating fish!'
+]
+var RANDOM_VI = THOUGHTS_VI
+var RANDOM_EN = THOUGHTS_EN
+
 function pickRandomLines() {
-  var total = 0
-  for (var i = 0; i < RANDOM_GROUPS.length; i++) total += RANDOM_GROUPS[i].w
-  var r = Math.random() * total
-  for (var i = 0; i < RANDOM_GROUPS.length; i++) {
-    r -= RANDOM_GROUPS[i].w
-    if (r < 0) return RANDOM_GROUPS[i].lines()
+  if (dshwCurrentLang === 'vi') {
+    return singleCenter('A', pickOne(THOUGHTS_VI), '', true)
   }
-  return RANDOM_GROUPS[RANDOM_GROUPS.length - 1].lines()
+  return singleCenter('A', pickOne(THOUGHTS_EN), '', true)
 }
+
 function applyBubbleLines(lines) {
   if (lines && lines.gif) {
     // gif 台词组：只显示 gif，隐藏三行文字(display 必须显式覆盖 CSS 的 none)
@@ -14435,7 +14996,7 @@ function restoreBubbleLines() {
   // 后续 setHint 首次直写分支不碰 opacity → 今日已用整行透明消失。
   labelEl.style.display = ''
   labelEl.className = 'dshwv-label'
-  labelEl.textContent = 'DeepSeek Balance'
+  labelEl.textContent = (dshwCurrentLang === 'vi') ? 'Số dư DeepSeek' : 'DeepSeek Balance'
   labelEl.style.color = ''
   labelEl.style.opacity = ''
   amountEl.style.display = ''
@@ -17436,7 +17997,9 @@ function bubbleCloseVisual() {
 // 清掉 textBox 里遗留的模块行(自定义场景切走/关闭时,防止叠到默认/消耗内容上)
 function bubbleClearModuleRows() {
   try {
-    var els = textBox.querySelectorAll('.dshwv-trow, .dshwv-mimg')
+    var els = textBox.querySelectorAll('.dshwv-trow, .dshwv-mimg, .dshwv-bubble-chat')
+    textBox.classList.remove('dshwv-text-chat')
+    bubbleBox.classList.remove('dshwv-pop-chat')
     for (var i = 0; i < els.length; i++) { try { textBox.removeChild(els[i]) } catch (err) {} }
   } catch (err) {}
 }
@@ -17446,7 +18009,7 @@ function sceneOpen(kind, renderFn, ttlMs) {
   //   队列泡泡(normal/random/custom)由 bubbleShowSeqNext() 在调用前按该项的框画好。
   // v851(第 4 条)：系统泡泡现在**各自也能选框**(usageSet.<kind>.frameId)——没选才跟随保底。
   try {
-    if (kind === 'cost' || kind === 'alert' || kind === 'wait') {
+    if (kind === 'cost' || kind === 'alert' || kind === 'wait' || kind === 'chat') {
       var sysFid = sysFrameIdOf(kind)
       if (sysFid && frameById(sysFid)) {
         // 走渲染器同一套：内置框/找不到的 id 会自动回落(resolveFrameForStep 的三级回退)
@@ -18438,7 +19001,8 @@ function bubbleRowContentOf(mod) {
   if (mod.type === 'recharge') return { txt: bubbleContentText(mod, bubbleRechargeText()), line: null }
   if (mod.type === 'today') {
     var tv2 = bubbleIsModelMod(mod) ? apiModelTodayText(mod.modelId) : (state.todayUsage !== null && state.todayUsage !== undefined ? fmt(state.todayUsage, state.todayUsageCurrency || state.currency) : '--')
-    return { txt: bubbleContentText(mod, 'Used today ' + tv2), line: null }
+    var todayLbl = (dshwCurrentLang === 'vi') ? 'Hôm nay dùng ' : 'Used today '
+    return { txt: bubbleContentText(mod, todayLbl + tv2), line: null }
   }
   if (mod.type === 'session') {
     // v768：对话名模块(自动内容 = 截断后的对话名；留空 tpl 时直接用自动内容)
@@ -18458,13 +19022,17 @@ function bubbleRowContentOf(mod) {
     var pw = bubblePeakText(mod)
     return { txt: bubbleContentText(mod, pw), line: null }
   }
-  if (mod.type === 'random' && Array.isArray(mod.lines)) {
-    var pi = bubblePickLine(mod.lines, mod._lastPick)
-    if (pi !== null && pi !== undefined && mod.lines[pi]) {
-      mod._lastPick = pi
-      return { txt: mod.lines[pi].t, line: mod.lines[pi] }
+  if (mod.type === 'random') {
+    var thoughtList = (dshwCurrentLang === 'vi') ? THOUGHTS_VI : THOUGHTS_EN
+    var picked = pickOne(thoughtList)
+    return { txt: picked, line: { t: picked, bold: true } }
+  }
+  if (mod.type === 'text') {
+    var txt = mod.text || ''
+    if (txt === 'Tokens' || txt === 'Token' || txt === 'DeepSeek Balance' || txt === 'Số dư DeepSeek' || txt === 'Token Check') {
+      txt = (dshwCurrentLang === 'vi') ? 'Số dư DeepSeek' : 'DeepSeek Balance'
     }
-    return { txt: '', line: null }
+    return { txt: txt, line: null }
   }
   return { txt: mod.text || '', line: null }
 }
@@ -18879,13 +19447,142 @@ var dshwLastWhaleClickAt = 0
 var dshwSpamClickStreak = 0
 var dshwSpamClickSilencedUntil = 0
 
+
+// ===== Whale In-Bubble Chat (Google Gemini 3.5 Flash) =====
+var chatHistory = []
+var lastWhaleReply = "Ask me anything, Boss~ ✨"
+var isChatGenerating = false
+
+function escapeChatHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+function openChatInBubble() {
+  if (!bubbleOn) return
+  bubbleRoundOn = true
+  bubbleSeqIdx = 2
+  sceneOpen('chat', renderChatInBubble, 0)
+}
+
+function renderChatInBubble() {
+  try {
+    labelEl.style.display = 'none'
+    amountEl.style.display = 'none'
+    hintEl.style.display = 'none'
+    textBox.classList.add('dshwv-text-chat')
+    bubbleBox.classList.add('dshwv-pop-chat')
+
+    var oldWrap = textBox.querySelector('.dshwv-bubble-chat')
+    if (oldWrap) {
+      try { textBox.removeChild(oldWrap) } catch (e) {}
+    }
+
+    var wrap = document.createElement('div')
+    wrap.className = 'dshwv-bubble-chat'
+    wrap.style.cssText = 'position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:auto;box-sizing:border-box;padding:0;background:transparent;border:none;'
+
+    var inp = document.createElement('input')
+    inp.type = 'text'
+    inp.className = 'dshwv-bubble-chat-input'
+    inp.placeholder = (dshwCurrentLang === 'vi') ? 'Nhập tin nhắn...' : 'Type here...'
+    inp.style.cssText = 'width:96%;height:auto;border:none !important;outline:none !important;background:transparent !important;color:#203170;font-size:16px;font-weight:700;font-family:inherit;text-align:center;box-shadow:none !important;box-sizing:border-box;pointer-events:auto;caret-color:#203170;padding:2px 0;'
+
+    function doSend() {
+      var text = (inp.value || '').trim()
+      if (!text) {
+        if (bubbleTtlTimer) { clearTimeout(bubbleTtlTimer); bubbleTtlTimer = null }
+        hideBubble()
+        return
+      }
+      if (isChatGenerating) return
+      inp.value = ''
+      isChatGenerating = true
+      chatHistory.push({ role: 'user', parts: [{ text: text }] })
+
+      wrap.innerHTML = '<div style="font-size:15px;font-weight:700;color:#536ba9;text-align:center;font-family:inherit;">' + (dshwCurrentLang === 'vi' ? 'Đang suy nghĩ... 💭' : 'Thinking... 💭') + '</div>'
+
+      fetch('/dsh-whale/gemini-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, history: chatHistory.slice(-8), language: dshwCurrentLang })
+      })
+      .then(function (r) { return r.json() })
+      .then(function (res) {
+        isChatGenerating = false
+        if (res && res.ok && res.reply) {
+          lastWhaleReply = res.reply
+          chatHistory.push({ role: 'model', parts: [{ text: res.reply }] })
+          var replyText = res.reply || ''
+          var len = replyText.length
+          var fontSize = len > 85 ? '13px' : (len > 45 ? '14px' : '15px')
+          var lineH = '1.3'
+          wrap.innerHTML = '<div class="dshwv-chat-reply-scroll" style="width:100%;height:100%;max-height:100%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:' + fontSize + ';font-weight:700;color:#1d2d63;line-height:' + lineH + ';word-break:break-word;white-space:pre-wrap;font-family:inherit;padding:2px 4px;box-sizing:border-box;cursor:pointer;overflow-y:auto;overflow-x:hidden;" title="Click to close">' + escapeChatHtml(replyText) + '</div>'
+          try { playRelease() } catch (e) {}
+
+          // 10 second auto-close cooldown
+          if (bubbleTtlTimer) { clearTimeout(bubbleTtlTimer); bubbleTtlTimer = null }
+          bubbleTtlArmed(10000)
+          bubbleTtlTimer = setTimeout(function () {
+            bubbleTtlTimer = null
+            hideBubble()
+          }, 10000)
+        } else if (res && res.error === 'NO_KEY') {
+          wrap.innerHTML = '<div style="font-size:13px;font-weight:600;color:#dc2626;text-align:center;font-family:inherit;cursor:pointer;">' + (dshwCurrentLang === 'vi' ? 'Vui lòng nhập khóa Gemini trong Cài đặt' : 'Please enter Gemini Key in Menu') + '</div>'
+        } else {
+          wrap.innerHTML = '<div style="font-size:13px;font-weight:600;color:#dc2626;text-align:center;font-family:inherit;cursor:pointer;">' + escapeChatHtml((res && res.error) || 'Error') + '</div>'
+        }
+      })
+      .catch(function (err) {
+        isChatGenerating = false
+        wrap.innerHTML = '<div style="font-size:13px;font-weight:600;color:#dc2626;text-align:center;font-family:inherit;cursor:pointer;">' + escapeChatHtml(err.message || 'Error') + '</div>'
+      })
+    }
+
+    inp.addEventListener('keydown', function (e) {
+      e.stopPropagation()
+      if (e.key === 'Enter') {
+        doSend()
+      } else if (e.key === 'Escape') {
+        if (bubbleTtlTimer) { clearTimeout(bubbleTtlTimer); bubbleTtlTimer = null }
+        hideBubble()
+      }
+    })
+    inp.addEventListener('click', function (e) { e.stopPropagation() })
+    inp.addEventListener('mousedown', function (e) { e.stopPropagation() })
+    inp.addEventListener('pointerdown', function (e) { e.stopPropagation() })
+
+    wrap.addEventListener('click', function (e) {
+      e.stopPropagation()
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.closest('input'))) return
+      if (!isChatGenerating) {
+        if (bubbleTtlTimer) { clearTimeout(bubbleTtlTimer); bubbleTtlTimer = null }
+        hideBubble()
+      }
+    })
+
+    wrap.appendChild(inp)
+    textBox.appendChild(wrap)
+    setTimeout(function () { try { inp.focus() } catch (e) {} }, 60)
+  } catch (err) {}
+}
+
+window.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && bubbleShown) {
+    hideBubble()
+  }
+})
+
 function whaleClick() {
   try {
     var now = Date.now()
     var delta = now - dshwLastWhaleClickAt
     dshwLastWhaleClickAt = now
 
-    // If spam clicking (2+ rapid clicks) or within silenced cooldown: silence dialogue bubbles
+    // Spam click protection
     if (dshwSpamClickStreak >= 2 || now < dshwSpamClickSilencedUntil) {
       dshwSpamClickSilencedUntil = now + 1200
       hideBubble()
@@ -18899,10 +19596,17 @@ function whaleClick() {
       return
     }
 
-    // 2-Click Sequence:
-    // Click 1: Say random think (Step 0)
-    // Click 2: Check token (Step 1)
-    // Click 3: Close bubble (do not keep saying!)
+    // If chat bubble is open, clicking Chibi closes it
+    if (bubbleShown && ((bubbleScene && bubbleScene.kind === 'chat') || textBox.querySelector('.dshwv-bubble-chat'))) {
+      if (bubbleTtlTimer) { clearTimeout(bubbleTtlTimer); bubbleTtlTimer = null }
+      hideBubble()
+      return
+    }
+
+    // Chibi only has 2 clicks:
+    // Click 1 on Chibi: Random thought
+    // Click 2 on Chibi: Check Token
+    // Click 3 on Chibi: Close
     if (!bubbleShown) {
       bubbleRoundOn = true
       bubbleSeqIdx = 0
@@ -18915,24 +19619,29 @@ function whaleClick() {
       return
     }
 
-    // 3rd click: close bubble
+    // 2 clicks finished -> close bubble!
     hideBubble()
   } catch (err) {}
 }
-// 点击泡泡:跳到下一项;已是最后一项则关闭
+
+// 点击泡泡:跳到下一项/打开输入框
 function bubbleNext() {
   try {
     if (!bubbleShown) return
     if (bubbleScene && bubbleScene.kind === 'cost') { hideCostBubble(); return }
     if (bubbleScene && bubbleScene.kind === 'alert') { hideUsageAlertBubble(); return }
-    // v777：等待交互泡泡**可以点掉**(用户反馈「无法点击关闭")。原来的实现在这里是 `return`
-    //(设计意图是"别让误点把'正在等待你回答'收掉")，但真机上用户就是想把它点掉 ⇒ 改成：
-    // 点泡泡 = 收起，并记住"这条挂起已被点掉"，pollWaitState 不再自动弹回(回答/批准或下一次新挂起照常)。
     if (bubbleScene && bubbleScene.kind === 'wait') { dismissWaitBubble(); return }
-    // v761(#161 C5)曾在此处"等待交互泡泡点它不关"(必须等被回答/批准)——
-    // v777 按用户反馈改成"可点关"，语义与实现见上面的 dismissWaitBubble()；这里不再拦截。
-    if (bubbleRoundOn && bubbleSeqIdx < bubbleSeq.length) { bubbleShowSeqNext(); return }
-    hideBubble()
+    if (bubbleScene && bubbleScene.kind === 'chat') {
+      var chatWrap = textBox.querySelector('.dshwv-bubble-chat')
+      if (chatWrap && !chatWrap.querySelector('input')) {
+        renderChatInBubble()
+        return
+      }
+      return
+    }
+
+    // Clicking the message bubble opens the text input!
+    openChatInBubble()
   } catch (err) {}
 }
 // —— 覆盖旧实现 ——
@@ -19256,13 +19965,13 @@ function render() {
   var amount, hint
   if (state.status === 'error') {
     amount = shown !== null ? fmt(shown, state.currency) : '--'
-    hint = state.message ? state.message.slice(0, 14) : 'acquisition failed · Click to try again'
+    hint = ''
   } else if (state.balance === null) {
     amount = shown !== null ? fmt(shown, state.currency) : '…'
     hint = 'Loading…'
   } else {
     amount = shown !== null ? fmt(shown, state.currency) : fmt(state.balance, state.currency)
-    hint = (state.usageLabel || 'Used today') + ' ' + (state.todayUsage !== null && state.todayUsage !== undefined ? fmt(state.todayUsage, state.todayUsageCurrency || state.currency) : '--')
+    hint = ((dshwCurrentLang === 'vi') ? 'Hôm nay dùng' : (state.usageLabel || 'Used today')) + ' ' + (state.todayUsage !== null && state.todayUsage !== undefined ? fmt(state.todayUsage, state.todayUsageCurrency || state.currency) : '--')
   }
   amountEl.textContent = amount
   if (bubbleRandomActive && bubbleRandomLines) {
@@ -20087,7 +20796,7 @@ function toggleMenu() {
   // v865(issue #237 后半)：打开菜单时补读一次 size 配置(别的端/别的标签改过也能立刻生效)
   try { resyncSizeCfg() } catch (err) {}
   menuOpen = !menuOpen
-  if (menuOpen) positionMenu()
+  if (menuOpen) { positionMenu(); try { updateLangBtnUI(); applyLanguageUI() } catch(e){} }
   menuBox.classList.toggle('dshwv-menu-open', menuOpen)
   if (menuOpen && !menuBtnHide) menuBtn.classList.add('dshwv-menu-btn-visible')
   // 汉堡按钮关闭菜单时同样复位用量子界面(用量态时滑回主菜单态,
@@ -20180,7 +20889,7 @@ function positionMenu() {
 
 // —— 自定义角色：列表 / 选择 / 置顶 / 删除 / 导入裁剪 ——
 var ROLE_URL = '/dsh-whale/roles.json'
-var currentRole = { id: 'default', name: 'Whale Widget', url: IMG_URL }
+var currentRole = { id: 'default', name: 'DeepSeek', url: IMG_URL }
 var roleList = []
 function loadRoles() {
   try {
@@ -20203,7 +20912,7 @@ function loadRoles() {
           else renderRolePanel()
         } else if (saved && saved !== 'default') {
           // 保存的角色已被删除：回退默认鲸鱼娘
-          applyRole('default', 'Whale Widget', IMG_URL)
+          applyRole('default', 'DeepSeek', IMG_URL)
         }
         // 若 saved 为空或为 default：保持当前(initRoleUrl 已是 IMG_URL)
       })
@@ -20435,7 +21144,7 @@ function deleteRole(id) {
           if (d && d.ok && Array.isArray(d.roles)) {
             roleList = d.roles
             renderRolePanel()
-            if (currentRole.id === id) applyRole('default', 'Whale Widget', IMG_URL)
+            if (currentRole.id === id) applyRole('default', 'DeepSeek', IMG_URL)
           }
         })
         .catch(function () {})

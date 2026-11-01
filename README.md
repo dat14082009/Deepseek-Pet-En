@@ -2,44 +2,89 @@
   🌐 <strong>English</strong> | <a href="README_vi.md">Tiếng Việt</a>
 </div>
 
-# 🐋 DeepSeek-Pet-En (DeepSeek Chibi Overlay)
+# 🐋 DeepSeek-Pet (DeepSeek Anime Chibi Overlay)
 
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 ![Status](https://img.shields.io/badge/status-Active-success.svg)
-<img src="Banner.png" alt="banner" width=full>
-A true desktop overlay port of the English `dsh-whale-widget`, bringing the adorable **DeepSeek anime girl chibi (DSniang)** right to your desktop! 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-This standalone application renders as a borderless, transparent, always-on-top desktop companion. It fully supports click-through for transparent screen areas, ensuring she stays by your side without interrupting your workflow.
+<img src="Banner.png" alt="DeepSeek Chibi Banner" width="100%">
+
+A lightweight, borderless, transparent desktop overlay companion featuring the adorable **DeepSeek anime chibi mascot**! 
+
+She stays elegantly on your desktop with zero obstructive window borders, provides click-through for transparent screen areas, tracks your DeepSeek API token balance, and lets you chat in real-time with an intelligent AI personality.
 
 ---
 
 ## ✨ Features
 
-- **🖥️ True Desktop Overlay**: Transparent background with no window borders or browser frames — only the chibi character, speech bubbles, and menus appear floating elegantly on your desktop.
-- **🖱️ Click-Through Support**: Clicking outside the chibi or menu clicks straight through to your desktop or background applications.
-- **📌 Always on Top**: Stays above all open windows so your chibi companion is always visible.
-- **🖐️ Draggable & Dockable**: Click and drag the chibi anywhere across your monitors; it automatically snaps and mirrors at screen edges and remembers its position.
-- **⚙️ System Tray Integration**: Right-click the chibi icon in your Windows notification area (system tray) to quickly Show/Hide, Reset Position, or Exit.
-- **🎮 Complete Interactive Experience**: Features speech bubbles, pet-pet interactions (`rua.gif`), audio effects, menu settings, API balance tracking, and role management.
+- **🖥️ True Desktop Overlay**: Rendered with a transparent canvas without window borders, title bars, or browser chrome. Only the chibi character, speech bubbles, and sleek menus float naturally over your desktop.
+- **💬 Live AI Chat via Google Gemini**: Click the speech bubble at any time to open a borderless chat input. DeepSeek replies concisely, warmly, and cleverly with cute expressions and emoji (no robotic or tsundere attitude).
+- **🌐 One-Click Bilingual Language Switcher**: Easily switch between **English 🇺🇸** and **Tiếng Việt 🇻🇳** directly inside the settings menu. Everything—from menus, thoughts, chat placeholders, and the entire Usage Records panel—updates instantly in real-time.
+- **📊 Usage Records & Real Balance Tracking**: Built-in usage accounting sub-panel to monitor token consumption, 7-day expense history, and local model estimates. Enter your DeepSeek API key to observe live token balance in the speech bubble.
+- **🖱️ Smart Mouse Click-Through**: Transparent areas automatically pass mouse clicks directly to background windows and applications without interrupting your workflow.
+- **🖐️ Draggable & Edge Docking**: Drag the chibi anywhere across your screens; she automatically snaps and mirrors at screen boundaries and preserves her location across restarts.
+- **📐 Full Screen Mode vs Compact Hitbox**: Switch between a full-screen transparent canvas and a compact window hitbox directly from the menu or tray options (prevents screen capture/snip tools from selecting the entire monitor).
+- **⚙️ Windows System Tray Companion**: Minimize, restore, reset position to the bottom-right corner, toggle startup with Windows, or exit safely from the Windows notification area.
+- **🎵 Sound Effects & Animations**: Head-patting interaction (`rua.gif`), audio feedback, and customizable random thoughts.
 
-## 📥 Installation
+---
 
-1. Go to the [Releases](../../releases) page of this repository.
-2. Download the latest `.zip` file from the newest release.
-3. Extract the downloaded archive to a folder of your choice on your computer.
-4. You're all set! No additional installation steps are required.
+## 🎮 Interactive Controls
 
-## 🚀 How to Run
+| Action | Result |
+| :--- | :--- |
+| **Click 1 on Chibi** | Random thought bubble from DeepSeek (in current language). |
+| **Click 2 on Chibi** | Check DeepSeek token & balance status. |
+| **Click 3 on Chibi** | Dismiss bubble. |
+| **Click Speech Bubble** | Open text input box to chat live with DeepSeek. |
+| **Press Enter / Click Reply** | Send message to AI; DeepSeek replies within 1–2 short sentences. Reply auto-closes after 10 seconds or upon clicking it. |
+| **Right-Click Chibi / Hamburger Icon** | Open widget settings menu. |
+| **Click Language Button** | Toggle between `🇻🇳 Tiếng Việt` and `🇺🇸 English`. |
 
-Getting started is simple! After extracting the files, you can launch the overlay using any of the following methods:
+---
 
-- **Option 1:** Double-click `DeepSeekWhaleWidget.exe` *(Recommended)*
-- **Option 2:** Double-click `run-overlay.bat`
-- **Option 3:** Run `npm start` in your PowerShell or terminal (requires Node.js)
+## 📥 Installation & How to Run
+
+1. Download the latest release `.zip` from the [Releases](../../releases) tab.
+2. Extract the archive into a folder of your choice.
+3. Launch the application:
+   - **Method 1 (Recommended):** Double-click `DeepSeekWhaleWidget.exe`.
+   - **Method 2:** Double-click `run-overlay.bat`.
+   - **Method 3:** Run `npm start` in PowerShell / terminal (requires Node.js).
+
+---
+
+## 🔑 API Keys Configuration
+
+### 1. Google Gemini API Key (for Live AI Chat)
+1. Right-click the chibi or click the menu button to open Settings.
+2. In the **Google Gemini API Key** card at the top, paste your key from [Google AI Studio](https://aistudio.google.com/) (`AIza...`).
+3. Click **Save**. The badge will show `✓ Connected`.
+4. Click on DeepSeek's speech bubble and start chatting!
+
+### 2. DeepSeek API Key (for Token Balance Check)
+1. Open the menu and click **- = Usage Records = -**.
+2. Under **DeepSeek API Key (Token Check)**, paste your DeepSeek API key (`sk-...`).
+3. Click **Save**. DeepSeek will verify the key and display your balance and remaining tokens in the bubble on Click 2.
+
+---
 
 ## 🛠️ Build from Source
 
-If you wish to modify the code or rebuild the C# launcher executable, you can do so by running the provided PowerShell build script:
+To compile the C# launcher executable or run in developer mode:
 
 ```powershell
+# Rebuild DeepSeekWhaleWidget.exe
 powershell -ExecutionPolicy Bypass -File .\build.ps1
+
+# Run development overlay
+npm start
+```
+
+---
+
+## 📄 License & Credits
+
+- MIT License.
+- Ported and enhanced from `dsh-whale-widget`.
