@@ -2,31 +2,42 @@
   🌐 <strong>English</strong> | <a href="README_vi.md">Tiếng Việt</a>
 </div>
 
-# 🐋 DeepSeek-Pet (DeepSeek Anime Chibi Overlay)
+# 🐋 DeepSeek-Pet (Rust / Tauri v2 Desktop Overlay)
 
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 ![Status](https://img.shields.io/badge/status-Active-success.svg)
+![Tech Stack](https://img.shields.io/badge/backend-Rust%20%7C%20Tauri%20v2-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 <img src="Banner.png" alt="DeepSeek Chibi Banner" width="100%">
 
-A lightweight, borderless, transparent desktop overlay companion featuring the adorable **DeepSeek anime chibi mascot**! 
+A high-performance, lightweight, borderless transparent desktop companion featuring the adorable **DeepSeek anime chibi mascot**—now fully rewritten with **Rust and Tauri v2**!
 
-She stays elegantly on your desktop with zero obstructive window borders, provides click-through for transparent screen areas, tracks your DeepSeek API token balance, and lets you chat in real-time with an intelligent AI personality.
+She stays floating on your desktop with zero obstructive window borders, provides click-through for transparent screen areas, tracks your DeepSeek API token balance, and lets you chat in real-time with an intelligent AI personality powered by Google Gemini.
 
 ---
 
-## ✨ Features
+## ⚡ What's New in the Rust / Tauri v2 Version
 
-- **🖥️ True Desktop Overlay**: Rendered with a transparent canvas without window borders, title bars, or browser chrome. Only the chibi character, speech bubbles, and sleek menus float naturally over your desktop.
-- **💬 Live AI Chat via Google Gemini**: Click the speech bubble at any time to open a borderless chat input. DeepSeek replies concisely, warmly, and cleverly with cute expressions and emoji (no robotic or tsundere attitude).
-- **🌐 One-Click Bilingual Language Switcher**: Easily switch between **English 🇺🇸** and **Tiếng Việt 🇻🇳** directly inside the settings menu. Everything—from menus, thoughts, chat placeholders, and the entire Usage Records panel—updates instantly in real-time.
-- **📊 Usage Records & Real Balance Tracking**: Built-in usage accounting sub-panel to monitor token consumption, 7-day expense history, and local model estimates. Enter your DeepSeek API key to observe live token balance in the speech bubble.
-- **🖱️ Smart Mouse Click-Through**: Transparent areas automatically pass mouse clicks directly to background windows and applications without interrupting your workflow.
-- **🖐️ Draggable & Edge Docking**: Drag the chibi anywhere across your screens; she automatically snaps and mirrors at screen boundaries and preserves her location across restarts.
-- **📐 Full Screen Mode vs Compact Hitbox**: Switch between a full-screen transparent canvas and a compact window hitbox directly from the menu or tray options (prevents screen capture/snip tools from selecting the entire monitor).
-- **⚙️ Windows System Tray Companion**: Minimize, restore, reset position to the bottom-right corner, toggle startup with Windows, or exit safely from the Windows notification area.
-- **🎵 Sound Effects & Animations**: Head-patting interaction (`rua.gif`), audio feedback, and customizable random thoughts.
+- **🚀 75% Less RAM Usage**: Idle memory footprint dropped from ~120MB+ (Electron) down to **~35MB**!
+- **⚡ Zero Startup Lag**: Replaced bulky Chromium with native Windows **WebView2** and compiled Rust binaries. Instant startup with ~0% idle CPU consumption.
+- **🦀 Native Windows Win32 Hit-Testing**: Rust background thread monitors cursor coordinates (`GetCursorPos`) to dynamically switch between click-through and interaction, eliminating sticky clicks.
+- **🔒 Native Single-Instance Lock**: Prevents duplicate running instances natively. Launching the `.exe` again brings the existing mascot to focus immediately.
+- **📦 Clean & Compact (~130 MB)**: Standalone portable directory without requiring external package installations.
+
+---
+
+## ✨ Core Features
+
+- **🖥️ True Desktop Overlay**: Rendered on a transparent canvas with no window frames, title bars, or taskbar clutter. Only the mascot, speech bubbles, and menus float over your desktop.
+- **💬 Live AI Chat via Google Gemini**: Click the speech bubble at any time to chat. DeepSeek replies concisely, warmly, and cleverly with cute expressions and emojis.
+- **🌐 One-Click Bilingual Switcher**: Seamlessly toggle between **English 🇺🇸** and **Tiếng Việt 🇻🇳** directly in the settings menu. All UI elements, random thoughts, and accounting records update instantly.
+- **📊 Usage Records & Real Balance Tracking**: Monitor token consumption, 7-day expense history, and local model estimates. Enter your DeepSeek API key to observe live token balance.
+- **🖱️ Smart Mouse Click-Through**: Transparent regions pass mouse clicks straight through to underlying applications (browsers, games, code editors) without interruption.
+- **🖐️ Draggable & Snapping**: Drag the chibi anywhere across your monitors; she automatically docks to screen edges and saves her position across restarts.
+- **📐 Full Screen Mode vs Compact Hitbox**: Switch between a full-screen canvas and a small 520x480 hitbox directly from the settings or system tray.
+- **⚙️ Windows System Tray Integration**: Left-click the tray icon to quickly show/hide, or right-click to access settings, toggle fullscreen, reset position to the bottom-right, or exit.
+- **🎵 Sound Effects & Animations**: Head-patting interaction (`rua.gif`), audio feedback, and customizable thoughts.
 
 ---
 
@@ -38,20 +49,22 @@ She stays elegantly on your desktop with zero obstructive window borders, provid
 | **Click 2 on Chibi** | Check DeepSeek token & balance status. |
 | **Click 3 on Chibi** | Dismiss bubble. |
 | **Click Speech Bubble** | Open text input box to chat live with DeepSeek. |
-| **Press Enter / Click Reply** | Send message to AI; DeepSeek replies within 1–2 short sentences. Reply auto-closes after 10 seconds or upon clicking it. |
+| **Press Enter / Click Reply** | Send message to AI; DeepSeek replies within 1–2 short sentences. |
 | **Right-Click Chibi / Hamburger Icon** | Open widget settings menu. |
 | **Click Language Button** | Toggle between `🇻🇳 Tiếng Việt` and `🇺🇸 English`. |
+| **Left-Click Tray Icon** | Show / Hide chibi instantly. |
+| **Right-Click Tray Icon** | Context menu (Toggle Visibility, Full Screen, Reset Position, Reload, Exit). |
 
 ---
 
-## 📥 Installation & How to Run
+## 📥 How to Run
 
-1. Download the latest release `.zip` from the [Releases](../../releases) tab.
-2. Extract the archive into a folder of your choice.
-3. Launch the application:
-   - **Method 1 (Recommended):** Double-click `DeepSeekWhaleWidget.exe`.
-   - **Method 2:** Double-click `run-overlay.bat`.
-   - **Method 3:** Run `npm start` in PowerShell / terminal (requires Node.js).
+1. Open the folder:
+   ```
+   dsh-whale-tauri\
+   ```
+2. Double-click **`DeepSeekWhaleWidget.exe`**.
+3. That's it! The mascot will appear in the bottom-right corner of your desktop.
 
 ---
 
@@ -70,16 +83,39 @@ She stays elegantly on your desktop with zero obstructive window borders, provid
 
 ---
 
-## 🛠️ Build from Source
+## 🛠️ Build from Source (Rust & Tauri v2)
 
-To compile the C# launcher executable or run in developer mode:
+If you want to modify or compile the Rust binary yourself:
 
+### Prerequisites
+- [Rust](https://www.rust-lang.org/tools/install) (GNU or MSVC toolchain)
+- MinGW-w64 (if using `x86_64-pc-windows-gnu`)
+- Node.js (for running bundled backend dependencies)
+
+### Compile
 ```powershell
-# Rebuild DeepSeekWhaleWidget.exe
-powershell -ExecutionPolicy Bypass -File .\build.ps1
+cd src-tauri
+cargo build --release
+```
+The resulting executable will be generated at `src-tauri/target/release/dsh-whale-tauri.exe`. Copy it to the root directory as `DeepSeekWhaleWidget.exe`.
 
-# Run development overlay
-npm start
+> 💡 **Tip:** After compiling, run `cargo clean` inside `src-tauri` to delete the ~4.9 GB temporary compiler cache.
+
+---
+
+## 📁 Directory Structure
+
+```
+dsh-whale-tauri/
+├── DeepSeekWhaleWidget.exe   # Compiled native Rust application
+├── WebView2Loader.dll        # Windows WebView2 runtime loader
+├── server.mjs                # Local backend API server (runs hidden)
+├── overlay.html              # Desktop transparent overlay UI
+├── runtime/                  # Embedded Node.js runtime (node.exe)
+├── assets/                   # Character sprites, audio, animations
+├── lib/                      # Helper libraries & Gemini connector
+├── frontend/                 # Static webview assets
+└── src-tauri/                # Complete Rust / Tauri v2 source code
 ```
 
 ---
