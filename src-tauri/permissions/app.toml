@@ -1,0 +1,40 @@
+[default]
+description = "Default permissions for application commands"
+permissions = [
+    "allow-set-ignore-mouse",
+    "allow-get-fullscreen-mode",
+    "allow-set-fullscreen-mode",
+    "allow-start-compact-drag",
+    "allow-compact-drag",
+    "allow-stop-compact-drag"
+]
+
+[[permission]]
+identifier = "allow-set-ignore-mouse"
+description = "Allows invoking set_ignore_mouse"
+commands.allow = ["set_ignore_mouse"]
+
+[[permission]]
+identifier = "allow-get-fullscreen-mode"
+description = "Allows invoking get_fullscreen_mode"
+commands.allow = ["get_fullscreen_mode"]
+
+[[permission]]
+identifier = "allow-set-fullscreen-mode"
+description = "Allows invoking set_fullscreen_mode"
+commands.allow = ["set_fullscreen_mode"]
+
+[[permission]]
+identifier = "allow-start-compact-drag"
+description = "Allows invoking start_compact_drag"
+commands.allow = ["start_compact_drag"]
+
+[[permission]]
+identifier = "allow-compact-drag"
+description = "Allows invoking compact_drag"
+commands.allow = ["compact_drag"]
+
+[[permission]]
+identifier = "allow-stop-compact-drag"
+description = "Allows invoking stop_compact_drag"
+commands.allow = ["stop_compact_drag"]
