@@ -57,14 +57,13 @@
 
 ---
 
-## 📥 Hướng dẫn Chạy ứng dụng
+## 📥 Tải về & Hướng dẫn Chạy ứng dụng
 
-1. Mở thư mục:
-   ```
-   dsh-whale-tauri\
-   ```
-2. Nhấn đúp chuột vào file **`DeepSeekWhaleWidget.exe`**.
-3. Nhân vật chibi sẽ lập tức xuất hiện ở góc dưới bên phải màn hình desktop của bạn!
+1. Truy cập trang [**Releases**](https://github.com/dat14082009/Deepseek-Pet-En/releases).
+2. Tải bản phát hành mới nhất (`0.0.7.zip`).
+3. Giải nén file `.zip` vào một thư mục bất kỳ trên máy tính.
+4. Nhấn đúp chuột vào file **`DeepSeekWhaleWidget.exe`** để mở ngay lập tức.
+5. Nhân vật chibi sẽ lập tức xuất hiện ở góc dưới bên phải màn hình desktop của bạn!
 
 ---
 

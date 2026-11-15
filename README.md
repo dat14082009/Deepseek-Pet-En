@@ -57,14 +57,13 @@ She stays floating on your desktop with zero obstructive window borders, provide
 
 ---
 
-## 📥 How to Run
+## 📥 Download & How to Run
 
-1. Open the folder:
-   ```
-   dsh-whale-tauri\
-   ```
-2. Double-click **`DeepSeekWhaleWidget.exe`**.
-3. That's it! The mascot will appear in the bottom-right corner of your desktop.
+1. Go to the [**Releases**](https://github.com/dat14082009/Deepseek-Pet-En/releases) page.
+2. Download the latest release (`0.0.7.zip`).
+3. Extract the `.zip` archive anywhere on your PC.
+4. Double-click **`DeepSeekWhaleWidget.exe`** to launch immediately.
+5. The chibi mascot will float into the bottom-right corner of your desktop!
 
 ---
 
